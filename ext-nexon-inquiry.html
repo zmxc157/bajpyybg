@@ -603,6 +603,101 @@
   .ext-grid2 { grid-template-columns: 1fr; }
 }
 
+/* ====================================================================
+   NEXON 原站样式还原（regist.css / login_v2026.css 真实规则，图标取自 static.nexon.co.jp）
+==================================================================== */
+.nx-wrap{max-width:520px;margin:0 auto}
+.nx-ttl{margin:0 0 4px;text-align:center;font-size:2.6rem;font-weight:700;color:#333}
+.nx-lead{margin:0;text-align:center;font-size:1.35rem;color:#888}
+.nx-link{margin-top:1.6rem;text-align:center;font-size:1.35rem}
+.nx-link a{color:#666;text-decoration:underline}
+.nx-link a:hover{text-decoration:none}
+
+/* STEP1 账户类型按钮（原站 .account-type ul li a：460px 边框按钮 + 左侧品牌图标） */
+.nx-acctype{margin:2.4rem 0 0;padding:0;list-style:none}
+.nx-acctype li+li{margin-top:1rem}
+.nx-acctype a{position:relative;display:block;width:100%;box-sizing:border-box;text-align:center;font-size:1.4rem;font-weight:700;padding:1.35rem 0 1.3rem;border:solid 1px #d0d0d0;color:#333;text-decoration:none;background:#fff}
+.nx-acctype a::before{content:"";position:absolute;top:50%;left:1.9rem;transform:translateY(-50%);width:21px;height:21px;background:no-repeat center center/contain}
+.nx-acctype a:hover{background-color:#f6f6f6;border-color:#f6f6f6}
+.nx-acctype li.nexon a::before{background-image:url(assets/common/icons/icn_logo_nx_color.svg)}
+.nx-acctype li.google a::before{background-image:url(assets/common/icons/icn_logo_google.svg)}
+.nx-acctype li.apple a::before{background-image:url(assets/common/icons/icn_logo_apple_black.svg)}
+.nx-acctype li.line a::before{background-image:url(assets/common/icons/icn_logo_line.png)}
+.nx-acctype li.facebook a::before{background-image:url(assets/common/icons/icn_logo_fb_color.svg)}
+.nx-acctype a.is-off{cursor:default}
+.nx-acctype a.is-off::after{content:"联网功能已剥离";position:absolute;top:50%;right:1.6rem;transform:translateY(-50%);font-size:1.1rem;font-weight:400;color:#b0b6bf}
+
+/* 登录页圆形联合登录按钮（原站 70px 圆形 + 其他登录方式分隔） */
+.nx-round-wrap{position:relative;max-width:520px;margin:3.4rem auto 0}
+.nx-round-wrap::before{content:"";position:absolute;top:0;left:0;width:100%;height:1px;background-color:#e5e5e5;margin-top:7px}
+.nx-round-label{position:absolute;top:0;left:50%;transform:translateX(-50%);display:inline-block;padding:0 1.6rem;background-color:#f9f9f9;color:#888;font-size:1.3rem}
+.nx-round{position:relative;display:flex;justify-content:center;width:100%;margin:0;padding:5rem 0 0;list-style:none}
+.nx-round li{position:relative;width:64px;height:64px;margin:0 .5rem;border-radius:50%;border:solid 1px #f3f3f3;overflow:hidden;background:#fff}
+.nx-round li:hover{border-color:#ededed}
+.nx-round li a{position:absolute;top:0;left:0;display:block;width:100%;height:100%;text-indent:110%;overflow:hidden;white-space:nowrap;background-color:#fff}
+.nx-round li a:hover{background-color:#f3f3f3}
+.nx-round li a::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:no-repeat center center/contain}
+.nx-round li.facebook a::before{width:30px;height:30px;background-image:url(assets/common/icons/icn_logo_fb_color.svg)}
+.nx-round li.google a::before{width:30px;height:30px;background-image:url(assets/common/icons/icn_logo_google.svg)}
+.nx-round li.apple a::before{width:22px;height:27px;background-image:url(assets/common/icons/icn_logo_apple_black.svg)}
+.nx-round li.line a::before{width:25px;height:25px;background-image:url(assets/common/icons/icn_logo_line.svg)}
+.nx-round li.x a::before{width:30px;height:30px;background-image:url(assets/common/icons/icn_logo_x.svg)}
+
+/* 原站输入框（formlist__input：圆角 6px 边框 #D7D7D7） */
+.nx-form{max-width:460px;margin:2.4rem auto 0;color:#333}
+.nx-form__title{display:flex;align-items:center;font-size:1.35rem;font-weight:700;margin-bottom:.6rem}
+.nx-form__detail{position:relative;font-size:1.6rem}
+.nx-form__detail+.nx-form__title{margin-top:2rem}
+.nx-form__detail+.nx-form__detail{margin-top:2rem}
+.nx-form__input{box-sizing:border-box;width:100%;outline:none;border:solid 1px #d7d7d7;border-radius:6px;padding:1.4rem 1.6rem;font-size:1.6rem;background:#fff;color:#333}
+.nx-form__input::placeholder{color:#b6bcc7}
+.nx-form__input:focus{border-color:#aaa}
+.nx-form__disp{position:absolute;top:0;right:0;width:26px;height:26px;margin:1.7rem 1.5rem 0 0;overflow:hidden;cursor:pointer;background:url(assets/common/icons/icn_pass_visible.svg) no-repeat center center/contain}
+.nx-form__disp.is-off{background-image:url(assets/common/icons/icn_pass_invisible.svg)}
+.nx-form__retention{margin-top:1rem;font-size:1.35rem}
+.nx-form__safety{display:flex;align-items:center;margin-top:.8rem;font-size:1.15rem}
+.nx-form__safety .lv{display:flex;padding:1px;border:solid 1px #cacbcc;margin-left:.8rem}
+.nx-form__safety .lv span{display:block;width:8px;height:8px}
+.nx-form__safety .lv span+span{margin-left:1px}
+
+/* 协议复选框（原站 img_checkbox_*_pc.svg） */
+.nx-agree{max-width:460px;margin:2.8rem auto 0;font-size:1.35rem;color:#333}
+.nx-agree__text{text-align:center;font-size:1.35rem;color:#888;margin:0 0 .8rem}
+.nx-agree__all{padding:1.4rem 2rem;font-weight:700;background-color:#f5f6f7;margin-top:.8rem}
+.nx-agree__all label{display:block;cursor:pointer}
+.nx-agree__policy{margin:.6rem 0;padding:.8rem 2rem}
+.nx-agree__info{padding:0 2rem}
+.nx-agree label{display:flex;align-items:flex-start;cursor:pointer;line-height:1.7}
+.nx-agree input[type=checkbox]{position:absolute;opacity:0;width:0;height:0}
+.nx-agree .nx-check{flex:none;display:inline-block;width:23px;height:23px;margin-right:1.2rem;background:url(assets/common/icons/img_checkbox_default_pc.svg) no-repeat center center/contain}
+.nx-agree input[type=checkbox]:checked+.nx-check{background-image:url(assets/common/icons/img_checkbox_active_pc.svg)}
+.nx-agree__necessary{color:#0aa0d2}
+.nx-err{display:flex;align-items:flex-start;width:100%;margin:1rem auto 0;font-size:1.3rem;color:#d93025;line-height:1.6}
+
+/* 原站按钮（common-b 蓝 / common-black 黑，56px 高 + 右箭头） */
+.nx-btn{display:block;box-sizing:border-box;width:100%;max-width:460px;margin:2.4rem auto 0;position:relative;height:56px;padding:1.7rem 2rem 0;font-size:1.7rem;font-weight:700;color:#fff;text-align:center;text-decoration:none;border:0;border-radius:6px;overflow:hidden;cursor:pointer}
+.nx-btn::after{content:"";position:absolute;top:50%;right:2rem;transform:translateY(-50%);display:block;width:10px;height:16px;background:url(assets/common/icons/icn_arrow_w.svg) no-repeat center center/contain}
+.nx-btn--blue{background-color:#0aa0d2}
+.nx-btn--blue:hover{background-color:#14aae5}
+.nx-btn--black{background-color:#333}
+.nx-btn--black:hover{background-color:#0a74ff}
+.nx-btn--passkey{padding-left:5rem}
+.nx-btn--passkey::before{content:"";position:absolute;top:50%;left:2rem;transform:translateY(-50%);width:21px;height:21px;background:url(assets/common/icons/passkey_btn_icn.svg) no-repeat center center/contain}
+
+/* OTP 6 位输入框（原站 authkey__input：68px 大数字框） */
+.nx-otp{width:460px;max-width:100%;margin:2.4rem auto 0;display:flex;justify-content:space-between}
+.nx-otp span{box-sizing:border-box;width:68px;padding:.4rem 0 0;border:solid 1px #95989a;border-radius:6px;outline:none;text-align:center;font-size:4.6rem;line-height:1.2;color:#333;background:#fff}
+.nx-otp span:nth-of-type(3){margin-right:10px}
+.nx-otp-info{width:460px;max-width:100%;margin:1.6rem auto 0;font-size:1.35rem;color:#666}
+.nx-info-box{width:460px;max-width:100%;margin:2.4rem auto 0;border-radius:6px;background-color:#fff;border:solid 1px #f3f3f3}
+.nx-info-box__userid{display:flex;justify-content:center;align-items:center;padding:2.4rem 0;font-size:1.6rem}
+.nx-info-box__userid img{width:18px;margin-right:.6rem}
+.nx-info-box__userid dd{font-size:2.2rem;font-weight:700;color:#333;margin-left:.4rem}
+@media(max-width:560px){
+  .nx-otp span{width:12.6vw;font-size:9vw}
+  .nx-otp span:nth-of-type(3){margin-right:2vw}
+}
+
 
 /* ==========================================================
    本地化（汉化）专用样式 —— 由 YOMESTAR 悠梦星网络 ＆ ZMXC 添加
@@ -772,7 +867,7 @@
               <h3 style="font-size:1.55rem;font-weight:900;color:#1a1d23;margin:0 0 1rem">其他侧栏链接</h3>
               <ul class="ext-list" style="margin:0">
                 <li>官方 SNS：官方 LINE / 官方 X / NEXON 官方频道 / 官方 facebook</li>
-                <li>客户骚扰应对方針（カスタマーハラスメント対応方針）</li>
+                <li>客户骚扰应对方针（カスタマーハラスメント対応方針）</li>
                 <li>关于许可证信息（ライセンス情報について）</li>
               </ul>
             </div>
@@ -818,6 +913,7 @@
             <span class="l10n-footer__sep" aria-hidden="true">|</span>
             <span class="l10n-footer__item">内容本地化 <b>YOMESTAR 悠梦星网络 &#65286; ZMXC</b></span>
           </div>
+    <p class="l10n-footer__mail">页面报错 / 更新反馈：<a href="mailto:1578929129@qq.com">1578929129@qq.com</a></p>
           <p class="l10n-footer__note">本页面为非官方离线汉化版本，本质上是一个单机页面：我们仅保证页面中的内容在汉化工作进行之时是最新的，原站的后续更新不会在此同步。作品版权归 NEXON Co., Ltd. / NEXON Games Co., Ltd. 及 Yostar 所有，本汉化版与官方无关，禁止用于商业用途。</p>
           <p class="l10n-footer__copy">&copy; NEXON Co., Ltd. 与 NEXON Games Co., Ltd. 保留所有权利</p>
         </div>
