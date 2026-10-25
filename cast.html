@@ -147,29 +147,27 @@
 .l10n-modal__btn:hover{opacity:.85;transform:translateY(-.1rem)}
 .l10n-modal__btn:active{transform:none}
 
-/* ---------- 每页底部：源站跳转 + 汉化署名 ---------- */
-.l10n-footer{position:relative;z-index:5;padding:0 2rem 12rem}
-.l10n-footer__inner{max-width:112rem;margin:0 auto;border:max(1px,.4rem) solid #128afa;border-radius:2rem;background:#fff;padding:5rem 4rem 4.4rem;text-align:center;box-shadow:0 1rem 3rem rgba(18,138,250,.08)}
-.l10n-footer__title{margin:0 0 1.2rem;color:#128afa;font-size:2.7rem;font-weight:900;letter-spacing:.14em}
-.l10n-footer__sub{margin:0 0 3.4rem;color:#9aa7b8;font-size:1.4rem;letter-spacing:.08em}
-.l10n-footer__btn{display:inline-flex;align-items:center;gap:1.2rem;padding:2rem 5rem;border-radius:9999px;background:#128afa;color:#fff;font-size:2.1rem;font-weight:700;text-decoration:none;transition:opacity .2s,transform .2s;box-shadow:0 .8rem 2rem rgba(18,138,250,.35)}
-.l10n-footer__btn:hover{opacity:.88;transform:translateY(-.2rem)}
-.l10n-footer__btn span{font-size:1.8rem}
-.l10n-footer__url{margin:2.2rem 0 0;color:#8a94a6;font-size:1.4rem;word-break:break-all;line-height:1.6}
-.l10n-footer__meta{display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem 5rem;margin:3.8rem 0 0;padding-top:3.4rem;border-top:.1rem dashed #d7e3f5}
-.l10n-footer__row{display:flex;align-items:baseline;gap:1.2rem}
-.l10n-footer__row dt{color:#128afa;font-size:1.6rem;font-weight:700;letter-spacing:.06em}
-.l10n-footer__row dd{margin:0;color:#252525;font-size:1.9rem;font-weight:700;letter-spacing:.02em}
-.l10n-footer__note{margin:3.4rem 0 0;color:#9aa0ab;font-size:1.3rem;line-height:1.9}
-.l10n-footer__home{margin:2.6rem 0 0}
-.l10n-footer__home a{color:#128afa;font-size:1.5rem;font-weight:500;text-decoration:underline;text-underline-offset:.3rem}
+/* ---------- 每页底部：经典企业黑底小字署名区 ---------- */
+.l10n-footer{position:relative;z-index:5;background:#131313;padding:3.4rem 2rem 3rem}
+.l10n-footer__inner{max-width:112rem;margin:0 auto}
+.l10n-footer__links{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem 1.1rem;font-size:1.4rem;line-height:2;color:#8f8f8f}
+.l10n-footer__src{color:#f0f0f0;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:color .2s}
+.l10n-footer__src:hover{color:#8bb4ff}
+.l10n-footer__src span{font-size:1.2rem}
+.l10n-footer__home{color:#b9b9b9;text-decoration:none;transition:color .2s}
+.l10n-footer__home:hover{color:#8bb4ff}
+.l10n-footer__sep{color:#3d3d3d;user-select:none}
+.l10n-footer__item b{color:#d8d8d8;font-weight:700;margin-left:.3rem}
+.l10n-footer__mail{margin:1.2rem 0 0;font-size:1.4rem;line-height:2;color:#8f8f8f}
+.l10n-footer__mail a{color:#8bb4ff;text-decoration:none}
+.l10n-footer__mail a:hover{text-decoration:underline}
+.l10n-footer__note{margin:1.8rem 0 0;font-size:1.2rem;line-height:1.9;color:#6b6b6b}
+.l10n-footer__copy{margin:.8rem 0 0;font-size:1.2rem;line-height:1.9;color:#565656}
 @media(max-width:750.9px){
-  .l10n-footer{padding:0 1.6rem 8rem}
-  .l10n-footer__inner{padding:3.6rem 2.4rem 3.2rem;border-radius:1.4rem}
-  .l10n-footer__title{font-size:2.2rem}
-  .l10n-footer__btn{padding:1.6rem 3.2rem;font-size:1.8rem}
-  .l10n-footer__row dt{font-size:1.4rem}
-  .l10n-footer__row dd{font-size:1.6rem}
+  .l10n-footer{padding:2.6rem 1.6rem 2.4rem}
+  .l10n-footer__links{font-size:1.3rem;gap:.2rem .9rem}
+  .l10n-footer__mail{font-size:1.3rem}
+  .l10n-footer__note{font-size:1.1rem}
   .l10n-modal__box{padding:3.6rem 2.4rem 2.8rem}
   .l10n-modal__title{font-size:2.1rem}
   .l10n-modal__text{font-size:1.5rem}
@@ -204,7 +202,7 @@
           <path d="M12 9.2v5.2" stroke="#123f7d" stroke-width="2" stroke-linecap="round"/>
           <circle cx="12" cy="17.4" r="1.15" fill="#123f7d"/>
         </svg>
-        <p class="l10n-banner__text">本站为《蔚蓝档案》非官方本地化页面，<b>部分联网功能（注册 / 购票 / 咨询 / 直播等）可能无法使用</b>，请通过页面底部的按钮前往原站继续。</p>
+        <p class="l10n-banner__text">本站为《蔚蓝档案》非官方本地化页面，<b>部分联网功能（注册 / 购票 / 咨询 / 直播等）可能无法使用</b>，请通过页面底部的链接前往原站继续。</p>
         <button type="button" class="l10n-banner__close" id="js-l10n-banner-close" aria-label="关闭提示"><span class="l10n-banner__close-x" aria-hidden="true">×</span></button>
       </div>
     </div>
@@ -499,12 +497,12 @@
           <p class="footer__links-title">官方链接</p>
           <ul class="footer__sns">
             <li>
-              <a class="footer__sns-link footer__sns-link--youtube" href="notice.html?src=https%3A%2F%2Fcmn-jp.nexon.com%2Fevent%2Fba-6th-fes%2Fcast" data-track="footer_youtube" data-l10n-modal="官方 YouTube 频道属于外部联网服务，已在本地化版本中完全剥离。当前本地化页面仅供内容查看，请通过页面底部按钮前往原站继续使用。">
+              <a class="footer__sns-link footer__sns-link--youtube" href="notice.html?src=https%3A%2F%2Fcmn-jp.nexon.com%2Fevent%2Fba-6th-fes%2Fcast" data-track="footer_youtube" data-l10n-modal="官方 YouTube 频道属于外部联网服务，已在本地化版本中完全剥离。当前本地化页面仅供内容查看，请通过页面底部链接前往原站继续使用。">
                 <img src="assets/common/sns__youtube.svg" alt="YouTube" />
               </a>
             </li>
             <li>
-              <a class="footer__sns-link footer__sns-link--x" href="notice.html?src=https%3A%2F%2Fcmn-jp.nexon.com%2Fevent%2Fba-6th-fes%2Fcast" data-track="footer_x" data-l10n-modal="官方 X（原 Twitter）账号属于外部联网服务，已在本地化版本中完全剥离。当前本地化页面仅供内容查看，请通过页面底部按钮前往原站继续使用。">
+              <a class="footer__sns-link footer__sns-link--x" href="notice.html?src=https%3A%2F%2Fcmn-jp.nexon.com%2Fevent%2Fba-6th-fes%2Fcast" data-track="footer_x" data-l10n-modal="官方 X（原 Twitter）账号属于外部联网服务，已在本地化版本中完全剥离。当前本地化页面仅供内容查看，请通过页面底部链接前往原站继续使用。">
                 <img src="assets/common/sns__x.svg" alt="X" />
               </a>
             </li>
@@ -523,16 +521,17 @@
       <!-- 汉化版：源站跳转 + 汉化署名 -->
       <div class="l10n-footer" id="l10n-footer">
         <div class="l10n-footer__inner">
-          <p class="l10n-footer__title">本地化汉化版本</p>
-          <p class="l10n-footer__sub">LOCALIZED VERSION BY YOMESTAR &amp; ZMXC</p>
-          <a class="l10n-footer__btn" href="https://cmn-jp.nexon.com/event/ba-6th-fes/cast" target="_blank" rel="noopener noreferrer">访问源网站 <span>&#8594;</span></a>
-          <p class="l10n-footer__url">https://cmn-jp.nexon.com/event/ba-6th-fes/cast</p>
-          <dl class="l10n-footer__meta">
-            <div class="l10n-footer__row"><dt>汉化时间</dt><dd>2026年10月25日</dd></div>
-            <div class="l10n-footer__row"><dt>内容本地化</dt><dd>YOMESTAR 悠梦星网络 &#65286; ZMXC</dd></div>
-          </dl>
-          <p class="l10n-footer__note">本页面为离线汉化版本，仅供内容查看；页面内所有联网功能均已完全剥离。作品版权归 NEXON Co., Ltd. / NEXON Games Co., Ltd. 及 Yostar 所有，本汉化版与官方无关，禁止用于商业用途。</p>
-            <p class="l10n-footer__home"><a href="index.html">返回发行商变更公告主页</a></p>
+          <div class="l10n-footer__links">
+            <a class="l10n-footer__src" href="https://cmn-jp.nexon.com/event/ba-6th-fes/cast" target="_blank" rel="noopener noreferrer">访问源网站 <span aria-hidden="true">&#8599;</span></a>
+            <span class="l10n-footer__sep" aria-hidden="true">|</span>
+      <a class="l10n-footer__home" href="index.html">返回公告主页</a>
+      <span class="l10n-footer__sep" aria-hidden="true">|</span>
+            <span class="l10n-footer__item">汉化时间 <b>2026年10月25日</b></span>
+            <span class="l10n-footer__sep" aria-hidden="true">|</span>
+            <span class="l10n-footer__item">内容本地化 <b>YOMESTAR 悠梦星网络 &#65286; ZMXC</b></span>
+          </div>
+          <p class="l10n-footer__note">本页面为非官方离线汉化版本，本质上是一个单机页面：我们仅保证页面中的内容在汉化工作进行之时是最新的，原站的后续更新不会在此同步。作品版权归 NEXON Co., Ltd. / NEXON Games Co., Ltd. 及 Yostar 所有，本汉化版与官方无关，禁止用于商业用途。</p>
+          <p class="l10n-footer__copy">&copy; NEXON Co., Ltd. &amp; NEXON Games Co., Ltd.</p>
         </div>
       </div>
     </div>
@@ -563,7 +562,7 @@
   var DEFAULT_MSG =
     '该功能属于联网功能，已在本地化版本中完全剥离。' +
     '当前本地化页面仅供内容查看，不可使用相关功能。' +
-    '如需使用，请通过页面底部的「访问源网站」按钮前往原站继续。';
+    '如需使用，请通过页面底部的「访问源网站」链接前往原站继续。';
 
   function ready(fn) {
     if (document.readyState === 'loading') {

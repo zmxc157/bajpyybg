@@ -217,86 +217,72 @@
         text-underline-offset: 0.3rem;
       }
 
-      /* ---------- 底部：源站跳转 + 汉化署名 ---------- */
+      /* ---------- 底部：经典企业黑底小字署名区 ---------- */
       .l10n-footer {
-        padding: 0 2rem 6rem;
+        position: relative;
+        z-index: 5;
+        background: #131313;
+        padding: 3.4rem 2rem 3rem;
       }
       .l10n-footer__inner {
         max-width: 76rem;
         margin: 0 auto;
-        border: max(1px, 0.4rem) solid var(--c-blue);
-        border-radius: 2rem;
-        background: #fff;
-        padding: 4rem 4rem 3.6rem;
-        text-align: center;
       }
-      .l10n-footer__title {
-        margin: 0 0 1.2rem;
-        color: var(--c-blue);
-        font-size: 2.4rem;
-        font-weight: 900;
-        letter-spacing: 0.14em;
-      }
-      .l10n-footer__sub {
-        margin: 0 0 3rem;
-        color: #9aa7b8;
-        font-size: 1.3rem;
-        letter-spacing: 0.1em;
-      }
-      .l10n-footer__btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 1.2rem;
-        padding: 1.8rem 4.4rem;
-        border-radius: 9999px;
-        background: var(--c-blue);
-        color: #fff;
-        font-size: 2rem;
-        font-weight: 700;
-        text-decoration: none;
-        transition: opacity 0.2s, transform 0.2s;
-        box-shadow: 0 0.8rem 2rem rgba(18, 138, 250, 0.35);
-      }
-      .l10n-footer__btn:hover {
-        opacity: 0.88;
-        transform: translateY(-0.2rem);
-      }
-      .l10n-footer__url {
-        margin: 2rem 0 0;
-        color: #8a94a6;
-        font-size: 1.4rem;
-        word-break: break-all;
-      }
-      .l10n-footer__meta {
+      .l10n-footer__links {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.4rem 5rem;
-        margin: 3.4rem 0 0;
-        padding-top: 3rem;
-        border-top: 0.1rem dashed #d7e3f5;
+        align-items: center;
+        gap: 0.3rem 1.1rem;
+        font-size: 1.4rem;
+        line-height: 2;
+        color: #8f8f8f;
       }
-      .l10n-footer__row {
-        display: flex;
-        align-items: baseline;
-        gap: 1.2rem;
-      }
-      .l10n-footer__row dt {
-        color: var(--c-blue);
-        font-size: 1.5rem;
+      .l10n-footer__src {
+        color: #f0f0f0;
         font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.2s;
       }
-      .l10n-footer__row dd {
-        margin: 0;
-        color: var(--c-ink);
-        font-size: 1.8rem;
+      .l10n-footer__src:hover {
+        color: #8bb4ff;
+      }
+      .l10n-footer__src span {
+        font-size: 1.2rem;
+      }
+      .l10n-footer__sep {
+        color: #3d3d3d;
+        user-select: none;
+      }
+      .l10n-footer__item b {
+        color: #d8d8d8;
         font-weight: 700;
+        margin-left: 0.3rem;
       }
       .l10n-footer__note {
-        margin: 3rem 0 0;
-        color: #9aa0ab;
-        font-size: 1.3rem;
+        margin: 1.8rem 0 0;
+        font-size: 1.2rem;
         line-height: 1.9;
+        color: #6b6b6b;
+      }
+      .l10n-footer__target {
+        margin: 1.2rem 0 0;
+        font-size: 1.3rem;
+        line-height: 2;
+        color: #8f8f8f;
+        word-break: break-all;
+      }
+      .l10n-footer__target b {
+        color: #d8d8d8;
+        font-weight: 700;
+      }
+      .l10n-footer__copy {
+        margin: 0.8rem 0 0;
+        font-size: 1.2rem;
+        line-height: 1.9;
+        color: #565656;
       }
 
       @media (max-width: 750.9px) {
@@ -324,10 +310,14 @@
           font-size: 1.7rem;
         }
         .l10n-footer {
-          padding: 0 1.6rem 4rem;
+          padding: 2.6rem 1.6rem 2.4rem;
         }
-        .l10n-footer__inner {
-          padding: 3rem 2.2rem 2.6rem;
+        .l10n-footer__links {
+          font-size: 1.3rem;
+          gap: 0.2rem 0.9rem;
+        }
+        .l10n-footer__note {
+          font-size: 1.1rem;
         }
       }
     </style>
@@ -348,7 +338,7 @@
           本离线汉化版本仅对原页面的<strong>内容</strong>进行翻译与本地化，不含任何可使用的联网功能。所有原站上的注册、登录、表单、购票、地图、社交与直播等入口，均已统一引导至本告知页。
         </p>
         <p class="notice-card__text">
-          如需使用相关功能，请前往页面底部的「访问源网站」按钮，在 NEXON 官方网站上继续操作。
+          如需使用相关功能，请前往页面底部的「访问源网站」链接，在 NEXON 官方网站上继续操作。
         </p>
 
         <div class="notice-list">
@@ -382,15 +372,16 @@
 
     <div class="l10n-footer" id="l10n-footer">
       <div class="l10n-footer__inner">
-        <p class="l10n-footer__title">本地化汉化版本</p>
-        <p class="l10n-footer__sub">LOCALIZED VERSION BY YOMESTAR &amp; ZMXC</p>
-        <a class="l10n-footer__btn" id="js-footer-src" href="https://cmn-jp.nexon.com/transfer/bluearchive/" target="_blank" rel="noopener noreferrer">访问源网站 <span>&#8594;</span></a>
-        <p class="l10n-footer__url" id="js-footer-url">https://cmn-jp.nexon.com/transfer/bluearchive/</p>
-        <dl class="l10n-footer__meta">
-          <div class="l10n-footer__row"><dt>汉化时间</dt><dd>2026年10月25日</dd></div>
-          <div class="l10n-footer__row"><dt>内容本地化</dt><dd>YOMESTAR 悠梦星网络 &#65286; ZMXC</dd></div>
-        </dl>
-        <p class="l10n-footer__note">本页面为离线汉化版本，仅供内容查看；页面内所有联网功能均已完全剥离。作品版权归 NEXON Co., Ltd. / NEXON Games Co., Ltd. 及 Yostar 所有，本汉化版与官方无关，禁止用于商业用途。</p>
+        <div class="l10n-footer__links">
+          <a class="l10n-footer__src" id="js-footer-src" href="https://cmn-jp.nexon.com/transfer/bluearchive/" target="_blank" rel="noopener noreferrer">访问源网站 <span aria-hidden="true">&#8599;</span></a>
+          <span class="l10n-footer__sep" aria-hidden="true">|</span>
+          <span class="l10n-footer__item">汉化时间 <b>2026年10月25日</b></span>
+          <span class="l10n-footer__sep" aria-hidden="true">|</span>
+          <span class="l10n-footer__item">内容本地化 <b>YOMESTAR 悠梦星网络 &#65286; ZMXC</b></span>
+        </div>
+        <p class="l10n-footer__target">目标原站地址：<b id="js-footer-url">https://cmn-jp.nexon.com/transfer/bluearchive/</b></p>
+        <p class="l10n-footer__note">本页面为非官方离线汉化版本，本质上是一个单机页面：我们仅保证页面中的内容在汉化工作进行之时是最新的，原站的后续更新不会在此同步。作品版权归 NEXON Co., Ltd. / NEXON Games Co., Ltd. 及 Yostar 所有，本汉化版与官方无关，禁止用于商业用途。</p>
+        <p class="l10n-footer__copy">&copy; NEXON Co., Ltd. &amp; NEXON Games Co., Ltd.</p>
       </div>
     </div>
 
