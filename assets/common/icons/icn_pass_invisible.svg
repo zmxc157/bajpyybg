@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="47.243" height="37.414" viewBox="0 0 47.243 37.414">
+  <g id="icon_01" transform="translate(0 0.366)">
+    <g id="グループ_5011" data-name="グループ 5011" transform="translate(0 1.817)">
+      <path id="パス_9140" data-name="パス 9140" d="M23.622,2.907c9.063,0,17.164,9.589,20.055,13.446C40.783,20.213,32.685,29.8,23.622,29.8S6.458,20.211,3.567,16.353C6.46,12.494,14.558,2.907,23.622,2.907m0-2.907C10.575,0,0,16.353,0,16.353S10.575,32.707,23.622,32.707,47.243,16.353,47.243,16.353,36.668,0,23.622,0" transform="translate(0 0.523)" fill="#d7d7d7"/>
+      <path id="パス_9121" data-name="パス 9121" d="M20.54,12.36a5.558,5.558,0,1,1-5.558,5.558A5.564,5.564,0,0,1,20.54,12.36m0-1.71a7.268,7.268,0,1,0,7.268,7.268A7.269,7.269,0,0,0,20.54,10.65" transform="translate(2.728 -1.126)" fill="#d7d7d7"/>
+      <path id="パス_9122" data-name="パス 9122" d="M24.29,21.949a5.869,5.869,0,0,1-8.3-8.3Z" transform="translate(3.253 -1.126)" fill="#d7d7d7"/>
+    </g>
+    <g id="グループ_5010" data-name="グループ 5010" transform="translate(3.634 0)">
+      <line id="線_5" data-name="線 5" x2="27" y2="28" transform="translate(6.366 3.341)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+      <line id="線_6" data-name="線 6" x2="36" y2="36" transform="translate(0.366 0.341)" fill="none" stroke="#d7d7d7" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
