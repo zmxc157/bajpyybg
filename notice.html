@@ -333,9 +333,40 @@
           font-size: 1.1rem;
         }
       }
+
+      /* ---------- 顶部提示横幅：部分联网功能不可用 ---------- */
+      .l10n-banner{position:relative;z-index:99999;background:linear-gradient(100deg,#123f7d 0%,#1b56ab 45%,#2f74c8 100%);color:#fff;box-shadow:0 .3rem 1.4rem rgba(13,42,84,.35)}
+      .l10n-banner.is-closed{display:none}
+      .l10n-banner__inner{display:flex;align-items:center;gap:1.4rem;max-width:120rem;margin:0 auto;padding:1.1rem 2.4rem}
+      .l10n-banner__icon{flex:none;width:2.4rem;height:2.4rem}
+      .l10n-banner__text{margin:0;flex:1;font-size:1.5rem;font-weight:500;line-height:1.55;letter-spacing:.02em}
+      .l10n-banner__text b{font-weight:700;color:#ffe9f4}
+      .l10n-banner__close{flex:none;display:flex;align-items:center;justify-content:center;width:3rem;height:3rem;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;cursor:pointer;transition:background .2s;padding:0;font-family:inherit}
+      .l10n-banner__close:hover{background:rgba(255,255,255,.32)}
+      .l10n-banner__close-x{font-size:1.9rem;line-height:1;display:block}
+      @media(max-width:750.9px){
+        .l10n-banner__inner{padding:.9rem 1.4rem;gap:1rem}
+        .l10n-banner__icon{width:2rem;height:2rem}
+        .l10n-banner__text{font-size:1.3rem;line-height:1.5}
+        .l10n-banner__close{width:2.6rem;height:2.6rem}
+        .l10n-banner__close-x{font-size:1.6rem}
+      }
     </style>
   </head>
   <body>
+    <!-- 顶部提示横幅：部分联网功能不可用 -->
+    <div class="l10n-banner" id="l10n-banner">
+      <div class="l10n-banner__inner">
+        <svg class="l10n-banner__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2.5 22.5 21h-21L12 2.5Z" fill="#ffd54d" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M12 9.2v5.2" stroke="#123f7d" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="17.4" r="1.15" fill="#123f7d"/>
+        </svg>
+        <p class="l10n-banner__text">本站为《蔚蓝档案》非官方本地化页面，<b>该页面内容仅供查看，购票 / 咨询 / 注册等联网操作请通过页面底部的链接前往原站继续</b>。</p>
+        <button type="button" class="l10n-banner__close" id="js-l10n-banner-close" aria-label="关闭提示"><span class="l10n-banner__close-x" aria-hidden="true">×</span></button>
+      </div>
+    </div>
+
     <header class="notice-head">
       <p class="notice-head__badge">蔚蓝档案 汉化版</p>
       <h1 class="notice-head__title">联网功能已剥离</h1>
@@ -435,6 +466,21 @@
             window.open(src, '_blank', 'noopener');
           });
         }
+      })();
+
+      /* ---------- 顶部提示横幅：关闭后本次会话不再显示 ---------- */
+      (function () {
+        var banner = document.getElementById('l10n-banner');
+        var closeBtn = document.getElementById('js-l10n-banner-close');
+        if (!banner || !closeBtn) return;
+        var KEY = 'ba-l10n-banner-closed';
+        try {
+          if (window.sessionStorage.getItem(KEY) === '1') banner.classList.add('is-closed');
+        } catch (e) { /* 隐私模式等场景忽略 */ }
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-closed');
+          try { window.sessionStorage.setItem(KEY, '1'); } catch (e) { /* 忽略 */ }
+        });
       })();
     </script>
   </body>
