@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXON 咨询指引｜蔚蓝档案 汉化版</title>
+    <meta name="description" content="NEXON 咨询流程汉化指引：咨询前的常见问题查询、咨询表单使用流程与注意事项。" />
+    <meta property="og:title" content="NEXON 咨询指引｜蔚蓝档案 汉化版" />
+    <meta property="og:description" content="NEXON 咨询流程汉化指引：咨询前的常见问题查询、咨询表单使用流程与注意事项。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jp.nexon.com/support/inquiry/logoff-mail-send" />
+    <meta property="og:image" content="assets/common/ogpcard_transfer.png" />
+    <meta property="og:site_name" content="蔚蓝档案 汉化版" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NEXON 咨询指引｜蔚蓝档案 汉化版" />
+    <meta name="twitter:description" content="NEXON 咨询流程汉化指引：咨询前的常见问题查询、咨询表单使用流程与注意事项。" />
+    <link rel="icon" href="assets/common/favicon.ico" sizes="32x32" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <style>
+/* ==========================================================
+   汉化版 · 联网二级页面（外部站点内容汉化）统一样式
+   经典企业文档风：白底、细边框、灰字、蓝色链接
+   ========================================================== */
+.ext-page {
+  font-family: "Noto Sans SC", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background: #f4f5f7;
+  color: #2b2f36;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.ext-main {
+  flex: 1;
+  width: 100%;
+  max-width: 96rem;
+  margin: 0 auto;
+  padding: 3.2rem 2.4rem 4.8rem;
+}
+
+/* ---------- 页面头：来源站 + 标题 ---------- */
+.ext-head {
+  background: #fff;
+  border: 1px solid #e3e6ea;
+  border-radius: 1.2rem;
+  padding: 2.8rem 3.2rem;
+  margin-bottom: 2.4rem;
+}
+.ext-head__src {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.3rem;
+  color: #6b7280;
+  margin-bottom: 1.2rem;
+}
+.ext-head__badge {
+  display: inline-block;
+  background: #eef2ff;
+  color: #3457b2;
+  border: 1px solid #d5defc;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.ext-head__title {
+  font-size: 2.9rem;
+  font-weight: 900;
+  line-height: 1.3;
+  color: #1a1d23;
+  margin: 0 0 1rem;
+}
+.ext-head__sub {
+  font-size: 1.45rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0;
+}
+.ext-head__orig {
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px dashed #e3e6ea;
+  font-size: 1.3rem;
+  color: #8a8f99;
+  word-break: break-all;
+}
+.ext-head__orig a {
+  color: #3457b2;
+  text-decoration: none;
+  font-weight: 700;
+}
+.ext-head__orig a:hover { text-decoration: underline; }
+
+/* ---------- 内容区块 ---------- */
+.ext-body { display: flex; flex-direction: column; gap: 2.4rem; }
+.ext-card {
+  background: #fff;
+  border: 1px solid #e3e6ea;
+  border-radius: 1.2rem;
+  padding: 2.8rem 3.2rem;
+}
+.ext-card__title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #1a1d23;
+  margin: 0 0 1.8rem;
+  padding-left: 1.1rem;
+  border-left: 0.5rem solid #3457b2;
+  line-height: 1.4;
+}
+.ext-card__title small {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #9aa0ab;
+  margin-top: 0.4rem;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- 信息表 ---------- */
+.ext-table { margin: 0; }
+.ext-table__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #eef0f3;
+  font-size: 1.5rem;
+  line-height: 1.75;
+}
+.ext-table__row:last-child { border-bottom: 0; }
+.ext-table__row dt {
+  flex: none;
+  width: 12rem;
+  font-weight: 700;
+  color: #4b5160;
+}
+.ext-table__row dd { flex: 1; min-width: 18rem; margin: 0; color: #2b2f36; }
+.ext-table__row dd b { color: #b3447a; font-weight: 900; }
+.ext-table__row dd .ext-yen { font-weight: 900; color: #1a1d23; }
+.ext-table__row--head dt { color: #3457b2; }
+
+/* ---------- 列表 ---------- */
+.ext-list { margin: 0; padding: 0; list-style: none; }
+.ext-list li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 1.7rem;
+  font-size: 1.45rem;
+  line-height: 1.8;
+  color: #3a3f4a;
+}
+.ext-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  top: 1.25rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #3457b2;
+}
+.ext-list--note li { color: #6b7280; font-size: 1.35rem; }
+.ext-list--note li::before { background: #c3c8d2; }
+.ext-list li b { color: #b3447a; }
+
+/* ---------- 步骤 ---------- */
+.ext-steps { display: flex; flex-direction: column; gap: 1.6rem; }
+.ext-step {
+  display: flex;
+  gap: 1.8rem;
+  align-items: flex-start;
+  background: #fafbfc;
+  border: 1px solid #e8eaee;
+  border-radius: 1rem;
+  padding: 2rem 2.4rem;
+}
+.ext-step__num {
+  flex: none;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  background: #3457b2;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ext-step__title {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #1a1d23;
+  margin: 0 0 0.6rem;
+}
+.ext-step__text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #4b5160;
+  margin: 0;
+}
+
+/* ---------- FAQ ---------- */
+.ext-faq { display: flex; flex-direction: column; gap: 1.2rem; }
+.ext-faq__item {
+  border: 1px solid #e8eaee;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.ext-faq__q {
+  background: #f2f5fb;
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #24315e;
+  line-height: 1.65;
+}
+.ext-faq__q span {
+  display: inline-block;
+  background: #3457b2;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 900;
+  width: 2.6rem;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  text-align: center;
+  border-radius: 0.6rem;
+  margin-right: 1rem;
+  vertical-align: 0.1rem;
+}
+.ext-faq__a {
+  padding: 1.6rem 2rem;
+  font-size: 1.4rem;
+  line-height: 1.85;
+  color: #3a3f4a;
+}
+.ext-faq__a p { margin: 0 0 0.8rem; }
+.ext-faq__a p:last-child { margin-bottom: 0; }
+.ext-faq__no {
+  display: inline-block;
+  margin-left: 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #9aa0ab;
+}
+
+/* ---------- 表单预览（已禁用） ---------- */
+.ext-form { display: flex; flex-direction: column; gap: 1.4rem; }
+.ext-form__row { display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; align-items: baseline; }
+.ext-form__label {
+  flex: none;
+  width: 14rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4b5160;
+}
+.ext-form__label i {
+  font-style: normal;
+  color: #d33;
+  font-weight: 900;
+  margin-left: 0.3rem;
+}
+.ext-form__field {
+  flex: 1;
+  min-width: 20rem;
+  background: #f6f7f9;
+  border: 1px dashed #c9cdd5;
+  border-radius: 0.7rem;
+  padding: 1.05rem 1.4rem;
+  font-size: 1.4rem;
+  color: #9aa0ab;
+  line-height: 1.7;
+}
+.ext-form__field--select { color: #7c828e; }
+.ext-form__hint { font-size: 1.2rem; color: #9aa0ab; margin: 0.4rem 0 0; width: 100%; }
+.ext-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  align-items: center;
+  margin-top: 0.8rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid #eef0f3;
+}
+.ext-form__check {
+  font-size: 1.35rem;
+  color: #4b5160;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.ext-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #3457b2;
+  color: #fff;
+  border: 0;
+  border-radius: 0.8rem;
+  padding: 1.25rem 3rem;
+  font-size: 1.55rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  text-decoration: none;
+}
+.ext-btn:hover { background: #284791; }
+.ext-btn:active { transform: translateY(1px); }
+.ext-btn--ghost {
+  background: #fff;
+  color: #3457b2;
+  border: 1px solid #3457b2;
+}
+.ext-btn--ghost:hover { background: #eef2ff; }
+.ext-btn--disabled { background: #b7bcc7; cursor: not-allowed; }
+.ext-btn--disabled:hover { background: #b7bcc7; }
+
+/* ---------- 提示框 ---------- */
+.ext-note {
+  display: flex;
+  gap: 1.4rem;
+  background: #fffaf0;
+  border: 1px solid #f5e3bf;
+  border-radius: 1rem;
+  padding: 1.9rem 2.2rem;
+  font-size: 1.35rem;
+  line-height: 1.85;
+  color: #7a5b1e;
+}
+.ext-note--info {
+  background: #f0f6ff;
+  border-color: #cfdefc;
+  color: #2c4a86;
+}
+.ext-note__icon { flex: none; width: 2.2rem; height: 2.2rem; margin-top: 0.2rem; }
+.ext-note p { margin: 0; }
+.ext-note p + p { margin-top: 0.7rem; }
+.ext-note b { font-weight: 900; }
+
+/* ---------- 标签组 ---------- */
+.ext-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
+.ext-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f2f5fb;
+  border: 1px solid #dbe3f5;
+  color: #3457b2;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+}
+
+/* ---------- 通知列表 ---------- */
+.ext-news { display: flex; flex-direction: column; }
+.ext-news__item {
+  display: flex;
+  gap: 1.6rem;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid #eef0f3;
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+.ext-news__item:last-child { border-bottom: 0; }
+.ext-news__date {
+  flex: none;
+  width: 11rem;
+  color: #9aa0ab;
+  font-size: 1.3rem;
+  padding-top: 0.15rem;
+}
+.ext-news__text { flex: 1; color: #3a3f4a; }
+.ext-news__text b { color: #b3447a; }
+
+/* ---------- 双栏 ---------- */
+.ext-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+.ext-grid2 .ext-card { padding: 2.2rem 2.6rem; }
+.ext-grid2 .ext-card__title { font-size: 1.7rem; }
+
+/* ---------- SP ---------- */
+@media (max-width: 750.9px) {
+  .ext-main { padding: 2rem 1.4rem 3.6rem; }
+  .ext-head { padding: 2rem 1.8rem; }
+  .ext-head__title { font-size: 2.2rem; }
+  .ext-head__sub { font-size: 1.3rem; }
+  .ext-card { padding: 2rem 1.8rem; }
+  .ext-card__title { font-size: 1.7rem; }
+  .ext-table__row { font-size: 1.35rem; }
+  .ext-table__row dt { width: 100%; }
+  .ext-table__row dd { min-width: 0; }
+  .ext-list li { font-size: 1.3rem; }
+  .ext-step { padding: 1.6rem 1.6rem; gap: 1.2rem; }
+  .ext-step__num { width: 3.4rem; height: 3.4rem; font-size: 1.6rem; }
+  .ext-step__title { font-size: 1.5rem; }
+  .ext-step__text { font-size: 1.3rem; }
+  .ext-faq__q { font-size: 1.35rem; padding: 1.2rem 1.4rem; }
+  .ext-faq__a { font-size: 1.3rem; padding: 1.3rem 1.4rem; }
+  .ext-form__label { width: 100%; }
+  .ext-form__field { min-width: 0; }
+  .ext-note { font-size: 1.25rem; padding: 1.5rem 1.6rem; }
+  .ext-news__item { flex-direction: column; gap: 0.3rem; font-size: 1.3rem; }
+  .ext-news__date { width: auto; }
+  .ext-grid2 { grid-template-columns: 1fr; }
+}
+
+
+/* ==========================================================
+   本地化（汉化）专用样式 —— 由 YOMESTAR 悠梦星网络 ＆ ZMXC 添加
+   适用于所有汉化页面：弹窗、源站跳转、汉化署名
+   ========================================================== */
+
+/* ---------- 联网功能剥离提示弹窗 ---------- */
+.l10n-modal{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:2rem}
+.l10n-modal.is-open{display:flex}
+.l10n-modal__shade{position:absolute;inset:0;background:rgba(16,28,48,.62);animation:l10n-fade .25s ease both}
+@keyframes l10n-fade{from{opacity:0}to{opacity:1}}
+.l10n-modal__box{position:relative;width:100%;max-width:54rem;background:#fff;border-radius:2rem;padding:4.8rem 3.6rem 3.6rem;text-align:center;box-shadow:0 2rem 5rem rgba(0,0,0,.32);animation:l10n-pop .28s cubic-bezier(.22,.61,.36,1) both}
+@keyframes l10n-pop{from{opacity:0;transform:scale(.9) translateY(1.2rem)}to{opacity:1;transform:none}}
+.l10n-modal__badge{display:inline-block;margin-bottom:1.6rem;padding:.6rem 2rem;border-radius:9999px;background:#e8f3ff;color:#128afa;font-size:1.3rem;font-weight:700;letter-spacing:.12em}
+.l10n-modal__title{margin:0 0 1.6rem;color:#128afa;font-size:2.5rem;font-weight:900;line-height:1.4}
+.l10n-modal__text{margin:0 0 3.4rem;color:#3a3a3a;font-size:1.7rem;line-height:1.95;text-align:left}
+.l10n-modal__text strong{color:#128afa;font-weight:700}
+.l10n-modal__btns{display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem}
+.l10n-modal__btn{min-width:15rem;padding:1.4rem 2.6rem;border-radius:9999px;border:.2rem solid #128afa;background:#fff;color:#128afa;font-size:1.7rem;font-weight:700;cursor:pointer;transition:opacity .2s,transform .2s;font-family:inherit}
+.l10n-modal__btn--primary{background:#128afa;color:#fff}
+.l10n-modal__btn:hover{opacity:.85;transform:translateY(-.1rem)}
+.l10n-modal__btn:active{transform:none}
+
+/* ---------- 每页底部：经典企业黑底小字署名区 ---------- */
+.l10n-footer{position:relative;z-index:5;background:#131313;padding:3.4rem 2rem 3rem}
+.l10n-footer__inner{max-width:112rem;margin:0 auto}
+.l10n-footer__links{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem 1.1rem;font-size:1.4rem;line-height:2;color:#8f8f8f}
+.l10n-footer__src{color:#f0f0f0;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:color .2s}
+.l10n-footer__src:hover{color:#8bb4ff}
+.l10n-footer__src span{font-size:1.2rem}
+.l10n-footer__home{color:#b9b9b9;text-decoration:none;transition:color .2s}
+.l10n-footer__home:hover{color:#8bb4ff}
+.l10n-footer__sep{color:#3d3d3d;user-select:none}
+.l10n-footer__item b{color:#d8d8d8;font-weight:700;margin-left:.3rem}
+.l10n-footer__mail{margin:1.2rem 0 0;font-size:1.4rem;line-height:2;color:#8f8f8f}
+.l10n-footer__mail a{color:#8bb4ff;text-decoration:none}
+.l10n-footer__mail a:hover{text-decoration:underline}
+.l10n-footer__note{margin:1.8rem 0 0;font-size:1.2rem;line-height:1.9;color:#6b6b6b}
+.l10n-footer__copy{margin:.8rem 0 0;font-size:1.2rem;line-height:1.9;color:#565656}
+@media(max-width:750.9px){
+  .l10n-footer{padding:2.6rem 1.6rem 2.4rem}
+  .l10n-footer__links{font-size:1.3rem;gap:.2rem .9rem}
+  .l10n-footer__mail{font-size:1.3rem}
+  .l10n-footer__note{font-size:1.1rem}
+  .l10n-modal__box{padding:3.6rem 2.4rem 2.8rem}
+  .l10n-modal__title{font-size:2.1rem}
+  .l10n-modal__text{font-size:1.5rem}
+  .l10n-modal__btn{font-size:1.5rem;padding:1.2rem 2rem;min-width:12rem}
+}
+
+/* ---------- 顶部提示横幅：部分联网功能不可用 ---------- */
+.l10n-banner{position:relative;z-index:99999;background:linear-gradient(100deg,#123f7d 0%,#1b56ab 45%,#2f74c8 100%);color:#fff;box-shadow:0 .3rem 1.4rem rgba(13,42,84,.35)}
+.l10n-banner.is-closed{display:none}
+.l10n-banner__inner{display:flex;align-items:center;gap:1.4rem;max-width:120rem;margin:0 auto;padding:1.1rem 2.4rem}
+.l10n-banner__icon{flex:none;width:2.4rem;height:2.4rem}
+.l10n-banner__text{margin:0;flex:1;font-size:1.5rem;font-weight:500;line-height:1.55;letter-spacing:.02em}
+.l10n-banner__text b{font-weight:700;color:#ffe9f4}
+.l10n-banner__close{flex:none;display:flex;align-items:center;justify-content:center;width:3rem;height:3rem;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;cursor:pointer;transition:background .2s;padding:0;font-family:inherit}
+.l10n-banner__close:hover{background:rgba(255,255,255,.32)}
+.l10n-banner__close-x{font-size:1.9rem;line-height:1;display:block}
+@media(max-width:750.9px){
+  .l10n-banner__inner{padding:.9rem 1.4rem;gap:1rem}
+  .l10n-banner__icon{width:2rem;height:2rem}
+  .l10n-banner__text{font-size:1.3rem;line-height:1.5}
+  .l10n-banner__close{width:2.6rem;height:2.6rem}
+  .l10n-banner__close-x{font-size:1.6rem}
+}
+
+    </style>
+    <style>
+
+    </style>
+  </head>
+  <body class="ext-page">
+    <!-- 顶部提示横幅：部分联网功能不可用 -->
+    <div class="l10n-banner" id="l10n-banner">
+      <div class="l10n-banner__inner">
+        <svg class="l10n-banner__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2.5 22.5 21h-21L12 2.5Z" fill="#ffd54d" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M12 9.2v5.2" stroke="#123f7d" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="17.4" r="1.15" fill="#123f7d"/>
+        </svg>
+        <p class="l10n-banner__text">本站为《蔚蓝档案》非官方本地化页面，<b>该页面内容仅供查看，购票 / 咨询 / 注册等联网操作请通过页面底部的链接前往原站继续</b>。</p>
+        <button type="button" class="l10n-banner__close" id="js-l10n-banner-close" aria-label="关闭提示"><span class="l10n-banner__close-x" aria-hidden="true">×</span></button>
+      </div>
+    </div>
+
+    <main class="ext-main">
+      <div class="ext-head">
+        <p class="ext-head__src"><span class="ext-head__badge">联网页面 · 汉化查看版</span></p>
+        <h1 class="ext-head__title">NEXON 咨询指引</h1>
+        <p class="ext-head__sub">NEXON 咨询表单的使用流程说明（原站咨询页汉化指引版）</p>
+        <p class="ext-head__orig">原站地址：<a href="https://jp.nexon.com/support/inquiry/logoff-mail-send" target="_blank" rel="noopener noreferrer">https://jp.nexon.com/support/inquiry/logoff-mail-send &#8599;</a></p>
+      </div>
+
+      <div class="ext-body">
+        <section class="ext-card">
+          <h2 class="ext-card__title">咨询前请先查询常见问题<small>咨询前必读</small></h2>
+          <p style="font-size:1.5rem;line-height:1.9;color:#3a3f4a;margin:0 0 1.6rem">NEXON 支持中心设有按作品与主题分类的「常见问题」（FAQ），大部分疑问均可在此找到答案。会员账户相关分类下共刊载 60 条常见问题。</p>
+          <div class="ext-form__actions">
+            <a class="ext-btn" href="ext-nexon-faq.html">查看 NEXON 会员账户 FAQ（汉化）</a>
+          </div>
+        </section>
+
+        <section class="ext-card">
+          <h2 class="ext-card__title">咨询流程<small>咨询流程</small></h2>
+          <div class="ext-steps">
+            <div class="ext-step">
+              <div class="ext-step__num">1</div>
+              <div>
+                <h3 class="ext-step__title">登录 NEXON 官方网站</h3>
+                <p class="ext-step__text">咨询表单需要登录 NEXON ID 后使用。请先通过页面底部的链接前往 NEXON 官网并登录账户。</p>
+              </div>
+            </div>
+            <div class="ext-step">
+              <div class="ext-step__num">2</div>
+              <div>
+                <h3 class="ext-step__title">进入支持中心的咨询表单</h3>
+                <p class="ext-step__text">从 NEXON 官网的支持（サポート）页面选择「咨询」（お問い合わせ），进入咨询表单。</p>
+              </div>
+            </div>
+            <div class="ext-step">
+              <div class="ext-step__num">3</div>
+              <div>
+                <h3 class="ext-step__title">填写咨询内容并发送</h3>
+                <p class="ext-step__text">按表单提示选择分类、填写咨询内容与联系方式，确认后发送。回复将发送至您登记的邮箱地址。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ext-card">
+          <h2 class="ext-card__title">咨询注意事项<small>注意事项</small></h2>
+          <ul class="ext-list">
+            <li>账户类问题请在咨询前确认：登记邮箱地址是否仍可使用、是否设置了接收 NEXON 邮件的配置。</li>
+            <li>咨询回复可能需要一定时间，请预留充足时间。</li>
+            <li>如收到陌生的 NEXON 通知邮件，请先更改密码并警惕冒充邮件，再按需咨询。</li>
+            <li>严禁擅自转载或引用 NEXON 的回复内容。</li>
+          </ul>
+        </section>
+
+        <section class="ext-card">
+          <div class="ext-note ext-note--info">
+            <svg class="ext-note__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#3457b2" stroke-width="1.6"/><path d="M12 11v5.5" stroke="#3457b2" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.8" r="1.1" fill="#3457b2"/></svg>
+            <p>本页面为咨询流程的汉化说明页，<b>咨询表单需在原站登录后使用</b>。请通过页面底部的「访问源网站」链接前往 NEXON 官网。</p>
+          </div>
+        </section>
+      </div>
+
+    </main>
+
+      <!-- 汉化版：源站跳转 + 汉化署名 -->
+      <div class="l10n-footer" id="l10n-footer">
+        <div class="l10n-footer__inner">
+          <div class="l10n-footer__links">
+            <a class="l10n-footer__src" href="https://jp.nexon.com/support/inquiry/logoff-mail-send" target="_blank" rel="noopener noreferrer">访问源网站 <span aria-hidden="true">&#8599;</span></a>
+            <span class="l10n-footer__sep" aria-hidden="true">|</span>
+      <a class="l10n-footer__home" href="index.html">返回公告主页</a>
+      <span class="l10n-footer__sep" aria-hidden="true">|</span>
+            <span class="l10n-footer__item">汉化时间 <b>2026年10月25日</b></span>
+            <span class="l10n-footer__sep" aria-hidden="true">|</span>
+            <span class="l10n-footer__item">内容本地化 <b>YOMESTAR 悠梦星网络 &#65286; ZMXC</b></span>
+          </div>
+          <p class="l10n-footer__note">本页面为非官方离线汉化版本，本质上是一个单机页面：我们仅保证页面中的内容在汉化工作进行之时是最新的，原站的后续更新不会在此同步。作品版权归 NEXON Co., Ltd. / NEXON Games Co., Ltd. 及 Yostar 所有，本汉化版与官方无关，禁止用于商业用途。</p>
+          <p class="l10n-footer__copy">&copy; NEXON Co., Ltd. 与 NEXON Games Co., Ltd. 保留所有权利</p>
+        </div>
+      </div>
+
+    <div class="l10n-modal" id="l10n-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="l10n-modal__shade" data-l10n-close></div>
+      <div class="l10n-modal__box" role="document">
+        <span class="l10n-modal__badge">联网功能已剥离</span>
+        <h3 class="l10n-modal__title">本地化页面仅供内容查看</h3>
+        <p class="l10n-modal__text" id="l10n-modal-text"></p>
+        <div class="l10n-modal__btns">
+          <button type="button" class="l10n-modal__btn l10n-modal__btn--primary" data-l10n-goto>前往页面底部</button>
+          <button type="button" class="l10n-modal__btn" data-l10n-close>知道了</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+/* ==========================================================
+   汉化版共享脚本：联网功能剥离弹窗
+   （所有汉化页面通用，由 YOMESTAR 悠梦星网络 ＆ ZMXC 添加）
+   ========================================================== */
+(function () {
+  'use strict';
+  var DEFAULT_MSG =
+    '该功能属于联网功能，已在本地化版本中完全剥离。' +
+    '当前本地化页面仅供内容查看，不可使用相关功能。' +
+    '如需使用，请通过页面底部的「访问源网站」链接前往原站继续。';
+
+  function ready(fn) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn);
+    } else { fn(); }
+  }
+
+  ready(function () {
+    var modal = document.getElementById('l10n-modal');
+    if (!modal) return;
+    var textEl = document.getElementById('l10n-modal-text');
+    var lastFocus = null;
+
+    function open(msg) {
+      lastFocus = document.activeElement;
+      if (textEl) textEl.innerHTML = msg || DEFAULT_MSG;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.overflow = 'hidden';
+      var btn = modal.querySelector('[data-l10n-close]');
+      if (btn) btn.focus();
+    }
+    function close() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!(t instanceof Element)) return;
+      var trigger = t.closest('[data-l10n-modal]');
+      if (trigger) {
+        e.preventDefault();
+        open(trigger.getAttribute('data-l10n-modal'));
+        return;
+      }
+      if (t.closest('[data-l10n-close]')) { close(); return; }
+      if (t.closest('[data-l10n-goto]')) {
+        close();
+        var footer = document.getElementById('l10n-footer');
+        if (footer) footer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+    });
+  });
+})();
+
+/* ---------- 顶部提示横幅：关闭后本次会话不再显示 ---------- */
+(function () {
+  var banner = document.getElementById('l10n-banner');
+  var closeBtn = document.getElementById('js-l10n-banner-close');
+  if (!banner || !closeBtn) return;
+  var KEY = 'ba-l10n-banner-closed';
+  try {
+    if (window.sessionStorage.getItem(KEY) === '1') banner.classList.add('is-closed');
+  } catch (e) { /* 隐私模式等场景忽略 */ }
+  closeBtn.addEventListener('click', function () {
+    banner.classList.add('is-closed');
+    try { window.sessionStorage.setItem(KEY, '1'); } catch (e) { /* 忽略 */ }
+  });
+})();
+
+    </script>
+  </body>
+</html>

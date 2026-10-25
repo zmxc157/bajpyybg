@@ -194,7 +194,7 @@
 
     </style>
   </head>
-  <body>
+  <body data-phase="loading">
     <div class="l10n-banner" id="l10n-banner">
       <div class="l10n-banner__inner">
         <svg class="l10n-banner__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -205,6 +205,25 @@
         <p class="l10n-banner__text">本站为《蔚蓝档案》非官方本地化页面，<b>部分联网功能（注册 / 购票 / 咨询 / 直播等）可能无法使用</b>，请通过页面底部的链接前往原站继续。</p>
         <button type="button" class="l10n-banner__close" id="js-l10n-banner-close" aria-label="关闭提示"><span class="l10n-banner__close-x" aria-hidden="true">×</span></button>
       </div>
+    </div>
+
+    <!-- 汉化版复刻：原站首次访问的加载屏（logo 揭示动画） -->
+    <div class="loading" id="js-loading" aria-hidden="true">
+      <div class="loading__image">
+        <img class="loading__base" src="assets/common/logo-base.webp" alt="" width="600" height="120" />
+        <img class="loading__fill" id="js-loading-fill" src="assets/common/logo-fill.webp" alt="" width="600" height="120" />
+      </div>
+    </div>
+
+    <!-- 汉化版复刻：原站页面转场的波浪揭幕 -->
+    <div class="vt-cover" id="js-vt-cover" aria-hidden="true">
+      <svg class="vt-cover__wave vt-cover__wave--top" viewBox="0 0 1920 300" preserveAspectRatio="none">
+        <path class="wave__path" d="" />
+      </svg>
+      <div class="vt-cover__body"></div>
+      <svg class="vt-cover__wave vt-cover__wave--bottom" viewBox="0 0 1920 300" preserveAspectRatio="none">
+        <path class="wave__path" d="" />
+      </svg>
     </div>
 
     <div id="js-minichara" class="minichara" aria-hidden="true">
@@ -679,7 +698,7 @@
             <span class="l10n-footer__item">内容本地化 <b>YOMESTAR 悠梦星网络 &#65286; ZMXC</b></span>
           </div>
           <p class="l10n-footer__note">本页面为非官方离线汉化版本，本质上是一个单机页面：我们仅保证页面中的内容在汉化工作进行之时是最新的，原站的后续更新不会在此同步。作品版权归 NEXON Co., Ltd. / NEXON Games Co., Ltd. 及 Yostar 所有，本汉化版与官方无关，禁止用于商业用途。</p>
-          <p class="l10n-footer__copy">&copy; NEXON Co., Ltd. &amp; NEXON Games Co., Ltd.</p>
+          <p class="l10n-footer__copy">&copy; NEXON Co., Ltd. 与 NEXON Games Co., Ltd. 保留所有权利</p>
         </div>
       </div>
     </div>
@@ -846,17 +865,26 @@
     if (e.key === 'Escape') siteModalClose();
   });
 
-  /* ---------- 小角色（鼠标跟随，轻量复原） ---------- */
+  /* ---------- 小角色（鼠标首次移动后淡入，复刻原站行为） ---------- */
   var mini = document.getElementById('js-minichara');
   if (mini) {
     var chara = mini.querySelector('.minichara__chara');
     var fish = mini.querySelector('.minichara__fish');
-    requestAnimationFrame(function () { mini.classList.add('is-ready'); });
+    var miniShown = false;
     var tx = window.innerWidth * 0.5, ty = window.innerHeight * 0.5;
     var cx = tx, cy = ty;
     document.addEventListener('mousemove', function (e) {
       tx = e.clientX; ty = e.clientY;
+      if (!miniShown) {
+        miniShown = true;
+        if (document.body.getAttribute('data-phase') !== 'loading') mini.classList.add('is-ready');
+      }
+    }, { passive: true });
+    // 入场动效结束（phase=main）后若已有鼠标移动则显示
+    var miniObserver = new MutationObserver(function () {
+      if (document.body.getAttribute('data-phase') === 'main' && miniShown) mini.classList.add('is-ready');
     });
+    miniObserver.observe(document.body, { attributes: true, attributeFilter: ['data-phase'] });
     (function loop() {
       cx += (tx - cx) * 0.06;
       cy += (ty - cy) * 0.06;
@@ -865,14 +893,190 @@
       requestAnimationFrame(loop);
     })();
   }
+})();
 
-  /* ---------- KV 入场动效（轻量） ---------- */
+    </script>
+    <script>
+/* ==========================================================
+   蔚蓝档案 Fes 汉化版 · 入场动效复刻
+   复原原站首次访问流程：
+   1) 白底加载屏：logo 灰底图 + 彩色图 clip-path 揭示
+   2) 波浪揭幕（vt-cover，随机主题色，上下双 wave）
+   3) KV 大图揭开（移除 is-intro）+ logo/日期 kv-pop 弹性动画
+   4) SP 端 KV 大图缓慢横移（Ken Burns）
+   5) wave path 持续波动动画
+   URL 带锚点 / 用户偏好减少动效时直接跳过
+   ========================================================== */
+(function () {
+  'use strict';
+
+  var body = document.body;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var loadingEl = document.getElementById('js-loading');
+  var vtCover = document.getElementById('js-vt-cover');
+  var fillEl = document.getElementById('js-loading-fill');
+  var kvVisual = document.getElementById('js-kv-visual');
   var kv = document.querySelector('.kv');
-  if (kv) {
-    requestAnimationFrame(function () {
-      kv.classList.add('is-ready', 'is-skip');
+
+  function setPhase(p) { body.setAttribute('data-phase', p); }
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  function setFill(t) {
+    if (!fillEl) return;
+    var n = (1 - Math.min(Math.max(t, 0), 1)) * 100;
+    fillEl.style.clipPath = 'inset(0 ' + n + '% 0 0)';
+  }
+
+  /* ---------- wave path 生成（复刻原站双正弦叠加） ---------- */
+  var UE = 1920, ME = 300, YT = 120, GT = 20;
+  var Q = { amp: 55, freq: 0.0022, speed: 1 };
+  var P = { amp: 28, freq: 0.0041, speed: -0.6 };
+  function wavePath(t) {
+    var pts = [];
+    for (var n = 0; n <= UE; n += GT) {
+      var y = YT + Math.sin(n * Q.freq + t * Q.speed) * Q.amp + Math.sin(n * P.freq + t * P.speed) * P.amp;
+      pts.push(n + ',' + y.toFixed(2));
+    }
+    return 'M0,' + ME + ' L' + pts.join(' L') + ' L' + UE + ',' + ME + ' Z';
+  }
+  var waveRAF = 0;
+  function startWave() {
+    var paths = document.querySelectorAll('.wave__path');
+    if (!paths.length) return;
+    var t0 = performance.now();
+    (function tick(now) {
+      var d = wavePath((now - t0) / 1000);
+      paths.forEach(function (p) { p.setAttribute('d', d); });
+      waveRAF = requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  /* ---------- 跳过模式：直接进入可读状态 ---------- */
+  function skipIntro() {
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (kvVisual) kvVisual.classList.remove('is-intro');
+    if (kv) kv.classList.add('is-skip');
+    setPhase('main');
+  }
+
+  /* ---------- SP 端 KV 大图横移（复刻原站 ge/Me） ---------- */
+  var panWanted = false, panStarted = false, panRAF = 0;
+  function kvPanStop() {
+    panWanted = false;
+    if (panRAF) { cancelAnimationFrame(panRAF); panRAF = 0; }
+    var img = kvVisual && kvVisual.querySelector('.kv__img');
+    if (img) img.style.transform = '';
+  }
+  function kvPanStart() {
+    if (!kvVisual || panStarted) return;
+    var img = kvVisual.querySelector('.kv__img');
+    if (!img) return;
+    var diff = img.offsetWidth - kvVisual.clientWidth;
+    if (diff <= 0) return;
+    panStarted = true;
+    var CYCLE = 12800, OFFSET = 800, t0 = null;
+    (function tick(now) {
+      if (!panWanted) { panStarted = false; return; }
+      if (t0 === null) t0 = now;
+      var a = (now - t0) % (CYCLE * 2);
+      var c = Math.floor(a / CYCLE);
+      var d = Math.min((a % CYCLE) / CYCLE, 1);
+      var l = c === 0 ? 1 - d : d;
+      img.style.transform = 'translate3d(' + (-diff * l) + 'px, 0, 0)';
+      panRAF = requestAnimationFrame(tick);
+    })(performance.now());
+  }
+  var panMQ = null;
+  function kvPanCheck() {
+    if (!kvVisual) return;
+    if (!panMQ) panMQ = window.matchMedia('(max-width: 750.9px)');
+    if (panMQ.matches) { panWanted = true; kvPanStart(); }
+    else kvPanStop();
+  }
+  if (panMQ === null && kvVisual) panMQ = window.matchMedia('(max-width: 750.9px)');
+  if (panMQ && panMQ.addEventListener) {
+    panMQ.addEventListener('change', function () {
+      if (panMQ.matches) { panWanted = true; kvPanStart(); } else kvPanStop();
     });
   }
+
+  /* ---------- 完整入场流程 ---------- */
+  function playIntro() {
+    setPhase('loading');
+    setFill(0);
+
+    // 预加载 KV 大图（race 3s 超时）
+    var imgs = kvVisual ? Array.prototype.slice.call(kvVisual.querySelectorAll('img')) : [];
+    var preload = Promise.all(imgs.map(function (img) {
+      return (img.decode ? img.decode() : Promise.resolve()).catch(function () {});
+    }));
+    var start = performance.now();
+
+    return Promise.race([preload, sleep(3000)])
+      .then(function () { return sleep(400); })
+      .then(function () {
+        // rAF 缓动揭示（时间常数 150ms，速度下限 dt/2200）
+        var progress = 0, last = performance.now();
+        return new Promise(function (resolve) {
+          function step(now) {
+            var dt = now - last; last = now;
+            var target = Math.min((now - start) / 1600, 1);
+            if (target > progress) {
+              progress = Math.min(progress + Math.max(target * (1 - Math.exp(-dt / 150)), dt / 2200), target);
+            }
+            setFill(progress);
+            if (progress >= 1 || now - start > 4500) resolve();
+            else requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      })
+      .then(function () {
+        setFill(1);
+        var elapsed = performance.now() - start;
+        return sleep(Math.max(0, 1000 - elapsed)); // 揭示不少于 1s
+      })
+      .then(function () { return sleep(600); }) // 原站 We
+      .then(function () {
+        // vt-cover 波浪进入
+        if (vtCover && !reduceMotion) {
+          var colors = ['#bcd4ff', '#ffe0e6', '#fdfbe3', '#d1f9ff'];
+          vtCover.style.setProperty('--vt-color', colors[Math.floor(Math.random() * colors.length)]);
+          vtCover.style.transition = 'none';
+          vtCover.style.transform = 'translateY(100%)';
+          void vtCover.offsetWidth;
+          vtCover.style.transition = 'transform 400ms cubic-bezier(0.4, 0, 0.2, 1)';
+          vtCover.style.transform = 'translateY(var(--vt-wave-h))';
+          startWave();
+          return sleep(700); // 400ms 进入 + 300ms 停留
+        }
+      })
+      .then(function () {
+        // phase=main：加载屏淡出（CSS .64s），KV 大图揭开 + kv-pop
+        setPhase('main');
+        if (kvVisual) kvVisual.classList.remove('is-intro');
+        if (kv) kv.classList.add('is-ready');
+        return sleep(240); // 原站 It
+      })
+      .then(function () {
+        kvPanCheck();
+        if (vtCover && !reduceMotion) {
+          vtCover.style.transition = 'transform 400ms cubic-bezier(0.4, 0, 0.2, 1)';
+          vtCover.style.transform = 'translateY(-100%)';
+        }
+      });
+  }
+
+  /* ---------- 入口 ---------- */
+  var hash = location.hash;
+  if (reduceMotion || (hash !== '' && hash !== '#index')) {
+    skipIntro();
+  } else {
+    playIntro().catch(skipIntro);
+  }
+  // 兜底：任何异常 8s 后强制可读
+  setTimeout(function () {
+    if (body.getAttribute('data-phase') !== 'main') skipIntro();
+  }, 8000);
 })();
 
     </script>
