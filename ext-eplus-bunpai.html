@@ -770,6 +770,7 @@
     <style>
 
     </style>
+    <link rel="stylesheet" href="assets/eplus/s/page/guide/smtk-bunpai/css/template.css" />
   </head>
   <body class="ext-page">
     <!-- 顶部提示横幅：部分联网功能不可用 -->
@@ -793,35 +794,40 @@
         <p class="ext-head__orig">原站地址：<a href="https://eplus.jp/bunpai-nosms/" target="_blank" rel="noopener noreferrer">https://eplus.jp/bunpai-nosms/ &#8599;</a></p>
       </div>
 
-      <div class="ext-body">
-        <section class="ext-card">
-          <h2 class="ext-card__title">同行者票券分配指南<small>「スマチケ」分配</small></h2>
-          <p style="font-size:2rem;font-weight:900;color:#b3447a;line-height:1.5;margin:0 0 1.4rem">「スマチケ」每人仅可下载 1 张！</p>
-          <p style="font-size:1.45rem;line-height:1.9;color:#3a3f4a;margin:0 0 1.8rem">已购票的顾客与同行者，请分别通过下方按钮确认各自的下载方法。</p>
-          <div class="ext-form__actions">
-            <button type="button" class="ext-btn ext-btn--disabled" data-l10n-modal>下载方法（已购票者）</button>
-            <button type="button" class="ext-btn ext-btn--ghost" data-l10n-modal>下载方法（同行者）</button>
-          </div>
-          <p style="font-size:1.25rem;color:#9aa0ab;line-height:1.8;margin:1.2rem 0 0">※ 上方按钮在原站可进入对应的下载说明页；在本地化版本中已剥离，请前往原站操作。</p>
-        </section>
-
-        <section class="ext-card">
-          <h2 class="ext-card__title">注意事项<small>注意事项</small></h2>
-          <ul class="ext-list">
-            <li><b>1 台手机中若存有 2 张以上票券，将无法入场。</b></li>
-            <li>购买 2 张以上的顾客，请在购票者与同行者各自的手机上，分别下载 1 张票券。</li>
-            <li>请将此页面告知同行者。</li>
-            <li>※ 未事先向同行者完成分配时，可能赶不上开演，敬请谅解。</li>
-          </ul>
-        </section>
-
-        <section class="ext-card">
-          <div class="ext-note ext-note--info">
-            <svg class="ext-note__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#3457b2" stroke-width="1.6"/><path d="M12 11v5.5" stroke="#3457b2" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.8" r="1.1" fill="#3457b2"/></svg>
-            <p>本页面为原站内容的汉化查看版。<b>实际的票券分配操作需要在 eplus 应用程序中完成</b>，请通过页面底部的「访问源网站」链接前往原站继续。</p>
-          </div>
-        </section>
-      </div>
+<!-- スマチケ分配指南页片段：源 https://eplus.jp/bunpai-nosms/ （原站 DOM 结构汉化版） -->
+<style>
+.ext-main{max-width:none;padding:0 0 3rem}
+#container{max-width:900px;margin:0 auto}
+</style>
+<header class="cf">
+  <p id="logo-header"><a href="https://eplus.jp/" target="_blank" rel="noopener noreferrer"><img src="assets/eplus/s/page/guide/smtk-bunpai/images/logo_eplus.png" alt="eplus 首页" /></a></p>
+</header>
+<div id="container">
+    <div class="kv-02">「スマチケ」请每位观众各下载 1 张！</div>
+<div class="wrap">
+已购买门票的客户及作为同行者的客户，请分别通过下方按钮确认各自的下载方法。<br>
+<br>
+<span class="red">
+・如果 1 台手机中同时存有 2 张及以上门票，将无法入场。<br>
+・购买 2 张及以上门票的客户，请在购票者与同行者各自的手机上分别下载 1 张门票。<br>
+・也请将本页面告知同行者。<br>
+</span>
+<br>
+※若未提前向同行者完成分配，可能来不及在开演前入场，敬请谅解。<br>
+<p style="margin-top: 30px; margin-bottom: 8px;"> </p>
+<center>
+<br>
+<a href="https://eplus.jp/s/page/guide/smtk-bunpai/guide-nosms_a01.html" target="_blank" rel="noopener noreferrer"><img src="assets/eplus/s/page/guide/smtk-bunpai/images/img_step_a01_01.png" usemap="#ImageMap" alt=" " border="0" /></a>
+<a href="https://eplus.jp/s/page/guide/smtk-bunpai/guide-nosms_b01.html" target="_blank" rel="noopener noreferrer"><img src="assets/eplus/s/page/guide/smtk-bunpai/images/img_step_a01_02.png" usemap="#ImageMap" alt=" " border="0" /></a>
+<br>
+</center>
+<br><br>
+</div>
+</div>
+<footer>
+  <!-- 页脚版权保留原站原文 -->
+  <p><small>Copyright eplus inc. All Rights Reserved.</small></p>
+</footer>
 
     </main>
 
