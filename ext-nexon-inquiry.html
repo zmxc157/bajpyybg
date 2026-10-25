@@ -357,6 +357,200 @@
   border-radius: 999px;
 }
 
+/* ---------- 账户类型选择（NEXON 原站 account-type 还原） ---------- */
+.ext-acctype { display: flex; flex-direction: column; gap: 1.1rem; margin: 0; padding: 0; list-style: none; }
+.ext-acctype__item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  background: #fff;
+  border: 1px solid #dfe3ea;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ext-acctype__item:hover { border-color: #3457b2; box-shadow: 0 0.3rem 1rem rgba(52, 87, 178, 0.12); }
+.ext-acctype__icon {
+  flex: none;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.ext-acctype__icon--nexon { background: #1a1d23; font-size: 1.05rem; }
+.ext-acctype__icon--google { background: #fff; border: 1px solid #e3e6ea; }
+.ext-acctype__icon--apple { background: #1a1d23; }
+.ext-acctype__icon--line { background: #06c755; }
+.ext-acctype__icon--facebook { background: #1877f2; }
+.ext-acctype__icon--x { background: #1a1d23; }
+.ext-acctype__body { flex: 1; min-width: 0; }
+.ext-acctype__name {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #1a1d23;
+  margin: 0 0 0.3rem;
+  line-height: 1.4;
+}
+.ext-acctype__desc { font-size: 1.3rem; color: #6b7280; margin: 0; line-height: 1.7; }
+.ext-acctype__orig {
+  flex: none;
+  font-size: 1.2rem;
+  color: #9aa0ab;
+  max-width: 26rem;
+  word-break: break-all;
+  line-height: 1.6;
+}
+
+/* ---------- 原站表单还原（NEXON 原站 formlist 预览） ---------- */
+.ext-ostyle { display: flex; flex-direction: column; gap: 1.8rem; }
+.ext-ostyle__row { display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; }
+.ext-ostyle__label {
+  flex: none;
+  width: 15rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2b2f36;
+  padding-top: 1rem;
+}
+.ext-ostyle__label--req::after {
+  content: "必須";
+  display: inline-block;
+  margin-left: 0.6rem;
+  background: #d33;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.3rem;
+  vertical-align: 0.15rem;
+}
+.ext-ostyle__label--opt::after {
+  content: "任意";
+  display: inline-block;
+  margin-left: 0.6rem;
+  background: #9aa0ab;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.3rem;
+  vertical-align: 0.15rem;
+}
+.ext-ostyle__field { flex: 1; min-width: 22rem; }
+.ext-ostyle__input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #c9cdd5;
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.4rem;
+  font-size: 1.45rem;
+  color: #2b2f36;
+  font-family: inherit;
+}
+.ext-ostyle__input::placeholder { color: #b6bcc7; }
+.ext-ostyle__input--disabled { background: #f6f7f9; color: #9aa0ab; border-style: dashed; }
+.ext-ostyle__toggle {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: 1.25rem;
+  color: #3457b2;
+  border: 1px solid #d5defc;
+  background: #f2f5fb;
+  border-radius: 0.5rem;
+  padding: 0.35rem 1rem;
+}
+.ext-ostyle__safety {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.9rem;
+  font-size: 1.3rem;
+  color: #4b5160;
+}
+.ext-ostyle__safety .level { display: inline-flex; gap: 0.3rem; }
+.ext-ostyle__safety .level span {
+  width: 2.2rem;
+  height: 0.7rem;
+  border-radius: 0.2rem;
+  background: #e3e6ea;
+}
+.ext-ostyle__safety .level span.on { background: #e0a63c; }
+.ext-ostyle__err {
+  display: block;
+  margin-top: 0.7rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #d33;
+  line-height: 1.7;
+}
+.ext-ostyle__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  font-size: 1.4rem;
+  color: #2b2f36;
+  line-height: 1.8;
+  padding: 0.9rem 0;
+}
+.ext-ostyle__check input[type="checkbox"] {
+  flex: none;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-top: 0.35rem;
+  accent-color: #3457b2;
+}
+.ext-ostyle__check--sub { padding-left: 2.8rem; font-size: 1.3rem; color: #4b5160; }
+.ext-ostyle__agree {
+  background: #fafbfc;
+  border: 1px solid #e8eaee;
+  border-radius: 1rem;
+  padding: 1.4rem 1.8rem 0.6rem;
+  margin-top: 0.6rem;
+}
+.ext-ostyle__agree-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #1a1d23;
+  margin: 0 0 0.8rem;
+}
+.ext-ostyle__btnrow { display: flex; flex-wrap: wrap; gap: 1.4rem; align-items: center; margin-top: 2rem; }
+.ext-btn--black { background: #1a1d23; }
+.ext-btn--black:hover { background: #333944; }
+.ext-ostyle__note { font-size: 1.3rem; color: #9aa0ab; margin: 1.2rem 0 0; line-height: 1.8; }
+
+/* ---------- 一次性密码（6 位单字框） ---------- */
+.ext-otp { display: flex; gap: 0.8rem; margin: 1.4rem 0 0; }
+.ext-otp__box {
+  width: 3.6rem;
+  height: 4.4rem;
+  border: 1px solid #c9cdd5;
+  border-radius: 0.6rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c3c8d2;
+}
+@media (max-width: 750.9px) {
+  .ext-acctype__orig { display: none; }
+  .ext-acctype__item { padding: 1.2rem 1.4rem; gap: 1.1rem; }
+  .ext-acctype__icon { width: 3.6rem; height: 3.6rem; font-size: 1.2rem; }
+  .ext-acctype__name { font-size: 1.4rem; }
+  .ext-acctype__desc { font-size: 1.2rem; }
+  .ext-ostyle__label { width: 100%; padding-top: 0; }
+  .ext-ostyle__field { min-width: 0; }
+  .ext-otp__box { width: 2.8rem; height: 3.6rem; font-size: 1.5rem; }
+}
+
 /* ---------- 通知列表 ---------- */
 .ext-news { display: flex; flex-direction: column; }
 .ext-news__item {
@@ -558,9 +752,9 @@
             <div>
               <h3 style="font-size:1.55rem;font-weight:900;color:#1a1d23;margin:0 0 1rem">登录区</h3>
               <ul class="ext-list" style="margin:0">
-                <li>登录（需登录 NEXON ID）</li>
+                <li>登录（需登录 NEXON ID）→ 本包已汉化：<a href="ext-nexon-login.html">NEXON ID 登录</a></li>
                 <li>点数充值（ポイントチャージ）</li>
-                <li>NEXON 会员注册（前往原站注册页）</li>
+                <li>NEXON 会员注册（前往原站注册页）→ 本包已汉化：<a href="ext-nexon-regist.html">NEXON ID 注册</a></li>
               </ul>
             </div>
             <div>

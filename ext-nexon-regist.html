@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NEXON ID 注册指引｜蔚蓝档案 汉化版</title>
-    <meta name="description" content="NEXON ID 注册相关汉化指引：免费会员注册入口、邮箱地址认证（注册 STEP1）注意事项与手机邮箱域名设置（依据 NEXON 官方 FAQ 整理）。" />
-    <meta property="og:title" content="NEXON ID 注册指引｜蔚蓝档案 汉化版" />
-    <meta property="og:description" content="NEXON ID 注册相关汉化指引：免费会员注册入口、邮箱地址认证（注册 STEP1）注意事项与手机邮箱域名设置（依据 NEXON 官方 FAQ 整理）。" />
+    <title>NEXON ID 注册｜蔚蓝档案 汉化版</title>
+    <meta name="description" content="NEXON 免费会员注册汉化查看版：账户类型选择（NEXON ID/Google/Apple/LINE/Facebook）与 NEXON ID 创建表单完整还原，含输入规则、同意项目、错误提示与邮箱地址认证注意事项。" />
+    <meta property="og:title" content="NEXON ID 注册｜蔚蓝档案 汉化版" />
+    <meta property="og:description" content="NEXON 免费会员注册汉化查看版：账户类型选择（NEXON ID/Google/Apple/LINE/Facebook）与 NEXON ID 创建表单完整还原，含输入规则、同意项目、错误提示与邮箱地址认证注意事项。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jp.nexon.com/regist/?gm=portal" />
     <meta property="og:image" content="assets/common/ogpcard_transfer.png" />
     <meta property="og:site_name" content="蔚蓝档案 汉化版" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="NEXON ID 注册指引｜蔚蓝档案 汉化版" />
-    <meta name="twitter:description" content="NEXON ID 注册相关汉化指引：免费会员注册入口、邮箱地址认证（注册 STEP1）注意事项与手机邮箱域名设置（依据 NEXON 官方 FAQ 整理）。" />
+    <meta name="twitter:title" content="NEXON ID 注册｜蔚蓝档案 汉化版" />
+    <meta name="twitter:description" content="NEXON 免费会员注册汉化查看版：账户类型选择（NEXON ID/Google/Apple/LINE/Facebook）与 NEXON ID 创建表单完整还原，含输入规则、同意项目、错误提示与邮箱地址认证注意事项。" />
     <link rel="icon" href="assets/common/favicon.ico" sizes="32x32" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -357,6 +357,200 @@
   border-radius: 999px;
 }
 
+/* ---------- 账户类型选择（NEXON 原站 account-type 还原） ---------- */
+.ext-acctype { display: flex; flex-direction: column; gap: 1.1rem; margin: 0; padding: 0; list-style: none; }
+.ext-acctype__item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  background: #fff;
+  border: 1px solid #dfe3ea;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ext-acctype__item:hover { border-color: #3457b2; box-shadow: 0 0.3rem 1rem rgba(52, 87, 178, 0.12); }
+.ext-acctype__icon {
+  flex: none;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.ext-acctype__icon--nexon { background: #1a1d23; font-size: 1.05rem; }
+.ext-acctype__icon--google { background: #fff; border: 1px solid #e3e6ea; }
+.ext-acctype__icon--apple { background: #1a1d23; }
+.ext-acctype__icon--line { background: #06c755; }
+.ext-acctype__icon--facebook { background: #1877f2; }
+.ext-acctype__icon--x { background: #1a1d23; }
+.ext-acctype__body { flex: 1; min-width: 0; }
+.ext-acctype__name {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #1a1d23;
+  margin: 0 0 0.3rem;
+  line-height: 1.4;
+}
+.ext-acctype__desc { font-size: 1.3rem; color: #6b7280; margin: 0; line-height: 1.7; }
+.ext-acctype__orig {
+  flex: none;
+  font-size: 1.2rem;
+  color: #9aa0ab;
+  max-width: 26rem;
+  word-break: break-all;
+  line-height: 1.6;
+}
+
+/* ---------- 原站表单还原（NEXON 原站 formlist 预览） ---------- */
+.ext-ostyle { display: flex; flex-direction: column; gap: 1.8rem; }
+.ext-ostyle__row { display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; }
+.ext-ostyle__label {
+  flex: none;
+  width: 15rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2b2f36;
+  padding-top: 1rem;
+}
+.ext-ostyle__label--req::after {
+  content: "必須";
+  display: inline-block;
+  margin-left: 0.6rem;
+  background: #d33;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.3rem;
+  vertical-align: 0.15rem;
+}
+.ext-ostyle__label--opt::after {
+  content: "任意";
+  display: inline-block;
+  margin-left: 0.6rem;
+  background: #9aa0ab;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.3rem;
+  vertical-align: 0.15rem;
+}
+.ext-ostyle__field { flex: 1; min-width: 22rem; }
+.ext-ostyle__input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #c9cdd5;
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.4rem;
+  font-size: 1.45rem;
+  color: #2b2f36;
+  font-family: inherit;
+}
+.ext-ostyle__input::placeholder { color: #b6bcc7; }
+.ext-ostyle__input--disabled { background: #f6f7f9; color: #9aa0ab; border-style: dashed; }
+.ext-ostyle__toggle {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: 1.25rem;
+  color: #3457b2;
+  border: 1px solid #d5defc;
+  background: #f2f5fb;
+  border-radius: 0.5rem;
+  padding: 0.35rem 1rem;
+}
+.ext-ostyle__safety {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.9rem;
+  font-size: 1.3rem;
+  color: #4b5160;
+}
+.ext-ostyle__safety .level { display: inline-flex; gap: 0.3rem; }
+.ext-ostyle__safety .level span {
+  width: 2.2rem;
+  height: 0.7rem;
+  border-radius: 0.2rem;
+  background: #e3e6ea;
+}
+.ext-ostyle__safety .level span.on { background: #e0a63c; }
+.ext-ostyle__err {
+  display: block;
+  margin-top: 0.7rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #d33;
+  line-height: 1.7;
+}
+.ext-ostyle__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  font-size: 1.4rem;
+  color: #2b2f36;
+  line-height: 1.8;
+  padding: 0.9rem 0;
+}
+.ext-ostyle__check input[type="checkbox"] {
+  flex: none;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-top: 0.35rem;
+  accent-color: #3457b2;
+}
+.ext-ostyle__check--sub { padding-left: 2.8rem; font-size: 1.3rem; color: #4b5160; }
+.ext-ostyle__agree {
+  background: #fafbfc;
+  border: 1px solid #e8eaee;
+  border-radius: 1rem;
+  padding: 1.4rem 1.8rem 0.6rem;
+  margin-top: 0.6rem;
+}
+.ext-ostyle__agree-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #1a1d23;
+  margin: 0 0 0.8rem;
+}
+.ext-ostyle__btnrow { display: flex; flex-wrap: wrap; gap: 1.4rem; align-items: center; margin-top: 2rem; }
+.ext-btn--black { background: #1a1d23; }
+.ext-btn--black:hover { background: #333944; }
+.ext-ostyle__note { font-size: 1.3rem; color: #9aa0ab; margin: 1.2rem 0 0; line-height: 1.8; }
+
+/* ---------- 一次性密码（6 位单字框） ---------- */
+.ext-otp { display: flex; gap: 0.8rem; margin: 1.4rem 0 0; }
+.ext-otp__box {
+  width: 3.6rem;
+  height: 4.4rem;
+  border: 1px solid #c9cdd5;
+  border-radius: 0.6rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c3c8d2;
+}
+@media (max-width: 750.9px) {
+  .ext-acctype__orig { display: none; }
+  .ext-acctype__item { padding: 1.2rem 1.4rem; gap: 1.1rem; }
+  .ext-acctype__icon { width: 3.6rem; height: 3.6rem; font-size: 1.2rem; }
+  .ext-acctype__name { font-size: 1.4rem; }
+  .ext-acctype__desc { font-size: 1.2rem; }
+  .ext-ostyle__label { width: 100%; padding-top: 0; }
+  .ext-ostyle__field { min-width: 0; }
+  .ext-otp__box { width: 2.8rem; height: 3.6rem; font-size: 1.5rem; }
+}
+
 /* ---------- 通知列表 ---------- */
 .ext-news { display: flex; flex-direction: column; }
 .ext-news__item {
@@ -499,29 +693,141 @@
     <main class="ext-main">
       <div class="ext-head">
         <p class="ext-head__src"><span class="ext-head__badge">联网页面 · 汉化查看版</span></p>
-        <h1 class="ext-head__title">NEXON ID 注册指引</h1>
-        <p class="ext-head__sub">NEXON 会员账户的注册入口与邮箱认证相关说明（依据 NEXON 官方 FAQ 整理）</p>
+        <h1 class="ext-head__title">NEXON ID 注册</h1>
+        <p class="ext-head__sub">免费会员注册流程汉化查看版：STEP1 选择账户类型 → STEP2 创建 NEXON ID（原站注册页还原）</p>
         <p class="ext-head__orig">原站地址：<a href="https://jp.nexon.com/regist/?gm=portal" target="_blank" rel="noopener noreferrer">https://jp.nexon.com/regist/?gm=portal &#8599;</a></p>
       </div>
 
       <div class="ext-body">
         <section class="ext-card">
-          <h2 class="ext-card__title">页面说明<small>NEXON ID 注册</small></h2>
-          <p style="font-size:1.5rem;line-height:1.9;color:#3a3f4a;margin:0">《蔚蓝档案》日服发行商变更为 NEXON 直接运营后，游戏登录与账户管理均通过 <b>NEXON ID</b>（NEXON 会员账户）进行。已有 NEXON ID 的用户无需重复注册，直接使用现有账户即可。</p>
-          <p style="font-size:1.4rem;line-height:1.85;color:#3a3f4a;margin:1.6rem 0 0">本页为依据 NEXON 官方 FAQ 整理的注册相关汉化指引。<b>注册操作本身为联网表单，已在本地剥离</b>，请在原站注册页完成。公告页 FAQ「NEXON 会员账户在哪里注册？」的原站回答为：「NEXON 会员账户的注册请通过下方 URL 进行。▼ 免费会员注册」。</p>
+          <h2 class="ext-card__title">页面说明<small>免费会员注册</small></h2>
+          <p style="font-size:1.4rem;line-height:1.9;color:#3a3f4a;margin:0 0 1.4rem">本页为 NEXON 门户网站「<b>免费会员注册</b>」（無料会員登録）的汉化查看版，按原站注册流程的两个页面完整还原：<b>STEP1 选择账户类型</b> → <b>STEP2 创建 NEXON ID</b>。《蔚蓝档案》日服发行商变更为 NEXON 直接运营后，游戏登录与账户管理均通过 NEXON ID（NEXON 会员账户）进行。</p>
+          <p style="font-size:1.3rem;line-height:1.8;color:#6b7280;margin:0">原站路径：NEXON 门户网站 ＞ 登录区 ＞ NEXON会员注册 ＞ 选择账户类型 ＞ 创建 NEXON ID。注册表单为联网功能，已在本地化页面中剥离，请在原站完成注册。</p>
         </section>
 
         <section class="ext-card">
-          <h2 class="ext-card__title">注册入口<small>免费会员注册</small></h2>
-          <p style="font-size:1.4rem;line-height:1.85;color:#3a3f4a;margin:0 0 1.6rem">NEXON 官方网站的「NEXON 会员注册」（NEXON会員登録）页面，可进行免费会员注册。该入口在 NEXON 门户网站各页面的侧栏登录区均有提供。</p>
-          <div class="ext-form__actions" style="border-top:0;padding-top:0">
-            <a class="ext-btn ext-btn--ghost" href="https://jp.nexon.com/regist/?gm=portal" target="_blank" rel="noopener noreferrer">原站注册页：https://jp.nexon.com/regist/ &#8599;</a>
+          <h2 class="ext-card__title">STEP1 选择要注册的账户类型<small>会員登録 / 账户类型选择</small></h2>
+          <p style="font-size:1.5rem;line-height:1.9;color:#3a3f4a;margin:0 0 1.8rem">请选择要注册的账户类型。</p>
+          <ul class="ext-acctype">
+            <li class="ext-acctype__item">
+              <span class="ext-acctype__icon ext-acctype__icon--nexon">NEXON<br>ID</span>
+              <div class="ext-acctype__body">
+                <h3 class="ext-acctype__name">使用 NEXON ID 注册</h3>
+                <p class="ext-acctype__desc">创建 NEXON 会员账户（NEXON ID）后使用。无需第三方账户，推荐。</p>
+              </div>
+              <span class="ext-acctype__orig">jp.nexon.com/regist/input</span>
+            </li>
+            <li class="ext-acctype__item">
+              <span class="ext-acctype__icon ext-acctype__icon--google">
+                <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 13.9 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-2.8-.4-4.1H24v8.4h12.5c-.3 2.1-1.6 5.2-4.7 7.3l7.6 5.9c4.6-4.3 6.7-10.5 6.7-17.5z"/><path fill="#FBBC05" d="M10.4 28.1c-.5-1.5-.8-3-.8-4.6s.3-3.1.8-4.6l-7.8-6.1C1 16.3 0 20 0 23.5s1 7.2 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.4-2 15.2-5.6l-7.6-5.9c-2 1.4-4.7 2.4-7.6 2.4-6.4 0-11.7-4.4-13.6-10.4l-7.8 6.1C6.5 41.1 14.6 47.5 24 47.5z"/></svg>
+              </span>
+              <div class="ext-acctype__body">
+                <h3 class="ext-acctype__name">使用 Google 账户注册</h3>
+                <p class="ext-acctype__desc">使用 Google 账户信息进行注册（TPA 联合登录）。</p>
+              </div>
+              <span class="ext-acctype__orig">jp.nexon.com/regist/tpa?tpatype=google</span>
+            </li>
+            <li class="ext-acctype__item">
+              <span class="ext-acctype__icon ext-acctype__icon--apple">
+                <svg width="20" height="20" viewBox="0 0 384 512" aria-hidden="true"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.5-33 24.8-63.2 24-74.1-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.5 44.3-25.3 71.2 26.2 2 49.4-11.4 69.2-32z"/></svg>
+              </span>
+              <div class="ext-acctype__body">
+                <h3 class="ext-acctype__name">使用 Apple 账户注册</h3>
+                <p class="ext-acctype__desc">使用 Apple ID 进行注册（Sign in with Apple）。</p>
+              </div>
+              <span class="ext-acctype__orig">jp.nexon.com/extendlogin/callback_apple</span>
+            </li>
+            <li class="ext-acctype__item">
+              <span class="ext-acctype__icon ext-acctype__icon--line">LINE</span>
+              <div class="ext-acctype__body">
+                <h3 class="ext-acctype__name">使用 LINE 账户注册</h3>
+                <p class="ext-acctype__desc">使用 LINE 账户信息进行注册（TPA 联合登录）。</p>
+              </div>
+              <span class="ext-acctype__orig">jp.nexon.com/regist/tpa?tpatype=line</span>
+            </li>
+            <li class="ext-acctype__item">
+              <span class="ext-acctype__icon ext-acctype__icon--facebook">
+                <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+              </span>
+              <div class="ext-acctype__body">
+                <h3 class="ext-acctype__name">使用 Facebook 账户注册</h3>
+                <p class="ext-acctype__desc">使用 Facebook 账户信息进行注册（TPA 联合登录）。</p>
+              </div>
+              <span class="ext-acctype__orig">jp.nexon.com/regist/tpa?tpatype=facebook</span>
+            </li>
+          </ul>
+          <p class="ext-ostyle__note">※ 选择账户类型的按钮为原站联网功能，已在本地化页面中剥离。请通过页面底部的「访问源网站」链接前往原站注册。</p>
+          <div class="ext-ostyle__btnrow">
+            <button type="button" class="ext-btn ext-btn--black" data-l10n-modal>使用 NEXON ID 注册（联网功能已剥离）</button>
+            <a class="ext-btn ext-btn--ghost" href="ext-nexon-login.html">已是 NEXON 会员的用户请由此登录（汉化） &#8594;</a>
           </div>
         </section>
 
         <section class="ext-card">
-          <h2 class="ext-card__title">邮箱地址认证（注册 STEP1）<small>官方 FAQ No：673</small></h2>
-          <p style="font-size:1.4rem;line-height:1.85;color:#3a3f4a;margin:0 0 1.6rem">NEXON ID 的注册从「STEP1 邮箱地址认证」开始。在该步骤邮箱地址无法使用（如显示「邮箱地址的输入格式不正确。」）时，请确认以下内容：</p>
+          <h2 class="ext-card__title">STEP2 创建 NEXON ID<small>NEXON ID作成 / 注册表单</small></h2>
+          <p style="font-size:1.35rem;line-height:1.8;color:#6b7280;margin:0 0 1.8rem">以下为原站「创建 NEXON ID」表单的完整还原（表单项目、输入规则、同意项目与按钮）。原站通过即时校验确认 NEXON ID 与密码的可用性。</p>
+          <div class="ext-ostyle">
+            <div class="ext-ostyle__row">
+              <span class="ext-ostyle__label">NEXON ID</span>
+              <div class="ext-ostyle__field">
+                <div class="ext-ostyle__input ext-ostyle__input--disabled">以半角英文字母开头的 4～20 个字符以内</div>
+                <p class="ext-ostyle__note">※ 输入时原站将即时校验；已被注册的 ID 将显示错误提示，并提供候选 ID（オルタナティブ）。</p>
+              </div>
+            </div>
+            <div class="ext-ostyle__row">
+              <span class="ext-ostyle__label">密码</span>
+              <div class="ext-ostyle__field">
+                <div class="ext-ostyle__input ext-ostyle__input--disabled">含半角英数字的 8～20 个字符以内</div>
+                <span class="ext-ostyle__toggle">显示切换</span>
+                <div class="ext-ostyle__safety">
+                  <span>密码安全性：</span>
+                  <span id="password_SaftyText">无效</span>
+                  <span class="level"><span></span><span></span><span></span><span></span></span>
+                </div>
+                <p class="ext-ostyle__note">※ 安全性随输入内容实时显示（4 级显示）。</p>
+              </div>
+            </div>
+            <div class="ext-ostyle__row">
+              <span class="ext-ostyle__label">密码（再次输入）</span>
+              <div class="ext-ostyle__field">
+                <div class="ext-ostyle__input ext-ostyle__input--disabled">重新输入密码</div>
+                <span class="ext-ostyle__toggle">显示切换</span>
+                <span class="ext-ostyle__err">※ 两次输入不一致时显示：「密码不一致。」</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ext-ostyle__agree">
+            <p class="ext-ostyle__agree-title">请在确认以下内容后，继续进行。</p>
+            <label class="ext-ostyle__check"><input type="checkbox" checked><span>已全部确认。</span></label>
+            <label class="ext-ostyle__check"><input type="checkbox" checked><span>同意《<a href="https://jp.nexon.com/rule/agreement.aspx" target="_blank" rel="noopener noreferrer">NEXON 使用规约</a>》与《<a href="https://company.nexon.co.jp/support/privacypolicy.html" target="_blank" rel="noopener noreferrer">隐私政策</a>》（必须）</span></label>
+            <label class="ext-ostyle__check"><input type="checkbox"><span>接收 NEXON 游戏资讯与优惠邮件（任意）</span></label>
+            <p class="ext-ostyle__note">※ 未勾选必须项目时点击「下一步」，原站将显示错误提示：「请确认使用规约与隐私政策。」</p>
+          </div>
+
+          <div class="ext-ostyle__btnrow">
+            <button type="button" class="ext-btn ext-btn--black" data-l10n-modal>下一步（联网功能已剥离）</button>
+            <button type="button" class="ext-btn ext-btn--ghost" data-l10n-modal>重新选择要注册的账户类型</button>
+          </div>
+          <p class="ext-ostyle__note">※ 原站在此页面点击 NEXON 标志离开时，将显示确认框：「要离开此页面吗？处理中的信息可能不会被保存。」</p>
+        </section>
+
+        <section class="ext-card">
+          <h2 class="ext-card__title">注册表单的错误提示一览<small>原站校验消息</small></h2>
+          <p style="font-size:1.4rem;line-height:1.85;color:#3a3f4a;margin:0 0 1.4rem">原站注册表单的实时校验消息（日文原文对照）：</p>
+          <ul class="ext-list">
+            <li>请输入 NEXON ID。（NEXON IDを入力してください）</li>
+            <li>NEXON ID 请输入 4 个字符以上、20 个字符以下。（NEXON IDは4文字以上、20文字以下で入力してください。）</li>
+            <li>该 ID 已被使用，无法注册。此时原站将提供候选 ID。（～は登録できません。）</li>
+            <li>密码不一致。（パスワードが一致しません。）</li>
+            <li>请确认使用规约与隐私政策。（利用規約とプライバシーポリシーを確認してください。）</li>
+            <li>发送处理发生错误时显示：发生错误，请稍后重试。（エラーが発生しました。）</li>
+          </ul>
+        </section>
+
+        <section class="ext-card">
+          <h2 class="ext-card__title">STEP3 邮箱地址认证<small>注册后的邮箱认证（官方 FAQ No：673）</small></h2>
+          <p style="font-size:1.4rem;line-height:1.85;color:#3a3f4a;margin:0 0 1.6rem">在原站完成 NEXON ID 创建后，将进入邮箱地址认证步骤（原站表单提交后转至邮箱认证页面 /regist/mail）。当邮箱地址无法输入（如显示「邮箱地址的输入格式不正确。」）时，请确认以下内容：</p>
           <div class="ext-steps">
             <div class="ext-step">
               <div class="ext-step__num">1</div>
@@ -552,32 +858,19 @@
               </div>
             </div>
           </div>
-        </section>
-
-        <section class="ext-card">
-          <h2 class="ext-card__title">手机邮箱的域名设置<small>官方 FAQ No：671</small></h2>
-          <p style="font-size:1.4rem;line-height:1.85;color:#3a3f4a;margin:0">在手机邮箱中设置了域名指定受信时，请进行设置以确保能接收来自「@nexon.co.jp」的邮件。设置方法因机型和业务内容而异，详情请咨询您所使用的手机运营商。</p>
-        </section>
-
-        <section class="ext-card">
-          <h2 class="ext-card__title">注册完成后的账户管理<small>我的页面</small></h2>
-          <ul class="ext-list">
-            <li>登录 NEXON 门户网站后，可通过「我的页面」管理账户：https://jp.nexon.com/mypage/</li>
-            <li>可更改的项目：密码 / 邮箱地址 / 电话号码（从「我的页面 ＞ 会员信息」更改：https://jp.nexon.com/mypage/member）。</li>
-            <li>不可更改的项目：NEXON ID / 姓名（汉字）/ 姓名（假名）/ 出生年月日。因结婚等发生改姓时，请通过原站咨询窗口联系。</li>
-            <li>请务必准确输入个人信息；登记内容存在缺失或虚假时可能无法完成本人确认。</li>
-          </ul>
+          <p class="ext-ostyle__note">※ 在手机邮箱中设置了域名指定受信时，请进行设置以确保能接收来自「@nexon.co.jp」的邮件（官方 FAQ No：671）。设置方法因机型和业务内容而异，详情请咨询您所使用的手机运营商。</p>
         </section>
 
         <section class="ext-card">
           <h2 class="ext-card__title">相关页面<small>相关页面</small></h2>
           <div class="ext-form__actions" style="border-top:0;padding-top:0">
-            <a class="ext-btn" href="ext-nexon-faq.html">NEXON 会员账户 FAQ（汉化）</a>
+            <a class="ext-btn" href="ext-nexon-login.html">NEXON ID 登录（汉化）</a>
+            <a class="ext-btn ext-btn--ghost" href="ext-nexon-faq.html">NEXON 会员账户 FAQ（汉化）</a>
             <a class="ext-btn ext-btn--ghost" href="ext-nexon-inquiry.html">NEXON 咨询（无法登录的用户）（汉化）</a>
           </div>
           <div class="ext-note ext-note--info" style="margin-top:1.8rem">
             <svg class="ext-note__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#3457b2" stroke-width="1.6"/><path d="M12 11v5.5" stroke="#3457b2" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.8" r="1.1" fill="#3457b2"/></svg>
-            <p>本页面为依据 NEXON 官方 FAQ 整理的注册相关汉化指引，<b>注册操作请在原站完成</b>。请通过页面底部的「访问源网站」链接前往 NEXON 官网注册页。</p>
+            <p>本页面为原站注册流程的汉化查看版，<b>注册操作请在原站完成</b>。请通过页面底部的「访问源网站」链接前往 NEXON 官网注册页。</p>
           </div>
         </section>
       </div>
