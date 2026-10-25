@@ -1,0 +1,20 @@
+<svg id="bgm_off_button" xmlns="http://www.w3.org/2000/svg" width="41" height="57" viewBox="0 0 41 57">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f8f8f8;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        font-size: 37.386px;
+        fill: #fff;
+        text-anchor: middle;
+        font-family: JosefinSansRoman;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <path id="シェイプ_1207" data-name="シェイプ 1207" class="cls-1" d="M24.561,0.77V38.4a0.743,0.743,0,0,1-1.169.608L6.9,27.583H1.36a0.743,0.743,0,0,1-.743-0.742V12.309a0.742,0.742,0,0,1,.743-0.742H6.937L23.393,0.161A0.744,0.744,0,0,1,24.561.77h0ZM39.613,25.865a1.3,1.3,0,0,1-.922-0.381l-4.123-4.124-4.124,4.124A1.3,1.3,0,1,1,28.6,23.64l4.124-4.124L28.6,15.392a1.3,1.3,0,1,1,1.843-1.843l4.124,4.124,4.123-4.124a1.3,1.3,0,0,1,1.843,1.843l-4.124,4.124,4.124,4.124A1.3,1.3,0,0,1,39.613,25.865Z"/>
+  <text id="OFF" class="cls-2" transform="translate(22.174 55.509) scale(0.428)"><tspan x="0">OFF</tspan></text>
+</svg>

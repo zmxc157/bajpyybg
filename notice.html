@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>联网功能已剥离｜蔚蓝档案 汉化版告知页</title>
+    <meta name="description" content="本地化汉化版本告知页：页面内所有联网功能均已完全剥离，本页面仅供内容查看，如需使用相关功能请前往 NEXON 官方网站。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="icon" href="assets/common/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" />
+
+    <style>
+      /* ==========================================================
+         汉化版预设告知页（联网功能剥离说明）—— 自包含样式
+         ========================================================== */
+      :root {
+        --c-blue: #128afa;
+        --c-blue-soft: #e8f3ff;
+        --c-pink: #ffaed8;
+        --c-ink: #252525;
+        --c-sub: #8a94a6;
+      }
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        border-style: solid;
+        border-width: 0;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+        font-size: min(0.78125vw, 10px);
+      }
+      @media (max-width: 750.9px) {
+        html {
+          font-size: 1.3333333333vw;
+        }
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(180deg, #fff 0%, #f2f8ff 55%, #ffe4f1 100%);
+        color: var(--c-ink);
+        font-family: "Noto Sans SC", "Hiragino Sans", sans-serif;
+        line-height: 1.9;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        max-width: 100%;
+      }
+
+      /* ---------- 顶部标识 ---------- */
+      .notice-head {
+        padding: 6rem 2rem 2rem;
+        text-align: center;
+      }
+      .notice-head__badge {
+        display: inline-block;
+        margin-bottom: 2rem;
+        padding: 0.8rem 2.8rem;
+        border-radius: 9999px;
+        background: var(--c-blue);
+        color: #fff;
+        font-family: "Josefin Sans", "Noto Sans SC", sans-serif;
+        font-weight: 700;
+        font-size: 1.6rem;
+        letter-spacing: 0.18em;
+      }
+      .notice-head__title {
+        margin: 0;
+        color: var(--c-blue);
+        font-size: 4.6rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        line-height: 1.3;
+      }
+      .notice-head__sub {
+        margin: 1.2rem 0 0;
+        color: var(--c-pink);
+        font-family: "Josefin Sans", "Noto Sans SC", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+      }
+
+      /* ---------- 主卡片 ---------- */
+      .notice-main {
+        flex: 1;
+        padding: 3rem 2rem 6rem;
+      }
+      .notice-card {
+        max-width: 76rem;
+        margin: 0 auto;
+        background: #fff;
+        border: max(1px, 0.4rem) solid var(--c-blue);
+        border-radius: 2rem;
+        padding: 5rem 5rem 4.4rem;
+        box-shadow: 0 1.2rem 3.6rem rgba(18, 138, 250, 0.12);
+      }
+      .notice-card__lead {
+        margin: 0 0 2.4rem;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.85;
+      }
+      .notice-card__lead strong {
+        color: var(--c-blue);
+      }
+      .notice-card__text {
+        margin: 0 0 3.2rem;
+        color: #3a3a3a;
+        font-size: 1.7rem;
+        line-height: 2;
+      }
+      .notice-card__text + .notice-card__text {
+        margin-top: -1.6rem;
+      }
+      .notice-list {
+        margin: 0 0 3.6rem;
+        padding: 2.8rem 3.2rem;
+        border-radius: 1.4rem;
+        background: var(--c-blue-soft);
+        list-style: none;
+      }
+      .notice-list__title {
+        margin: 0 0 1.6rem;
+        color: var(--c-blue);
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+      .notice-list__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 1.2rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .notice-list__items li {
+        padding: 0.6rem 1.8rem;
+        border-radius: 9999px;
+        background: #fff;
+        border: 0.1rem solid #cfe0ff;
+        color: #3a3a3a;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      .notice-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.6rem;
+      }
+      .notice-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        min-width: 22rem;
+        justify-content: center;
+        padding: 1.8rem 3.6rem;
+        border-radius: 9999px;
+        font-size: 1.9rem;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: opacity 0.2s, transform 0.2s;
+        font-family: inherit;
+      }
+      .notice-btn:hover {
+        opacity: 0.88;
+        transform: translateY(-0.2rem);
+      }
+      .notice-btn--primary {
+        background: var(--c-blue);
+        color: #fff;
+        box-shadow: 0 0.8rem 2rem rgba(18, 138, 250, 0.35);
+      }
+      .notice-btn--ghost {
+        background: #fff;
+        color: var(--c-blue);
+        border: 0.2rem solid var(--c-blue);
+      }
+      .notice-btn--back {
+        background: #fff;
+        color: #5a6478;
+        border: 0.2rem solid #d7e3f5;
+      }
+      .notice-nav {
+        margin: 4rem 0 0;
+        padding-top: 3.2rem;
+        border-top: 0.1rem dashed #d7e3f5;
+        text-align: center;
+      }
+      .notice-nav__title {
+        margin: 0 0 1.6rem;
+        color: var(--c-sub);
+        font-size: 1.4rem;
+        letter-spacing: 0.1em;
+      }
+      .notice-nav__links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.2rem 3.6rem;
+      }
+      .notice-nav__links a {
+        color: var(--c-blue);
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 0.3rem;
+      }
+
+      /* ---------- 底部：源站跳转 + 汉化署名 ---------- */
+      .l10n-footer {
+        padding: 0 2rem 6rem;
+      }
+      .l10n-footer__inner {
+        max-width: 76rem;
+        margin: 0 auto;
+        border: max(1px, 0.4rem) solid var(--c-blue);
+        border-radius: 2rem;
+        background: #fff;
+        padding: 4rem 4rem 3.6rem;
+        text-align: center;
+      }
+      .l10n-footer__title {
+        margin: 0 0 1.2rem;
+        color: var(--c-blue);
+        font-size: 2.4rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+      }
+      .l10n-footer__sub {
+        margin: 0 0 3rem;
+        color: #9aa7b8;
+        font-size: 1.3rem;
+        letter-spacing: 0.1em;
+      }
+      .l10n-footer__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1.8rem 4.4rem;
+        border-radius: 9999px;
+        background: var(--c-blue);
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: opacity 0.2s, transform 0.2s;
+        box-shadow: 0 0.8rem 2rem rgba(18, 138, 250, 0.35);
+      }
+      .l10n-footer__btn:hover {
+        opacity: 0.88;
+        transform: translateY(-0.2rem);
+      }
+      .l10n-footer__url {
+        margin: 2rem 0 0;
+        color: #8a94a6;
+        font-size: 1.4rem;
+        word-break: break-all;
+      }
+      .l10n-footer__meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.4rem 5rem;
+        margin: 3.4rem 0 0;
+        padding-top: 3rem;
+        border-top: 0.1rem dashed #d7e3f5;
+      }
+      .l10n-footer__row {
+        display: flex;
+        align-items: baseline;
+        gap: 1.2rem;
+      }
+      .l10n-footer__row dt {
+        color: var(--c-blue);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .l10n-footer__row dd {
+        margin: 0;
+        color: var(--c-ink);
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+      .l10n-footer__note {
+        margin: 3rem 0 0;
+        color: #9aa0ab;
+        font-size: 1.3rem;
+        line-height: 1.9;
+      }
+
+      @media (max-width: 750.9px) {
+        .notice-head {
+          padding: 4rem 1.6rem 1.6rem;
+        }
+        .notice-head__title {
+          font-size: 3.4rem;
+        }
+        .notice-main {
+          padding: 2rem 1.6rem 4rem;
+        }
+        .notice-card {
+          padding: 3.2rem 2.4rem 2.8rem;
+          border-radius: 1.4rem;
+        }
+        .notice-card__lead {
+          font-size: 1.8rem;
+        }
+        .notice-card__text {
+          font-size: 1.5rem;
+        }
+        .notice-btn {
+          min-width: 100%;
+          font-size: 1.7rem;
+        }
+        .l10n-footer {
+          padding: 0 1.6rem 4rem;
+        }
+        .l10n-footer__inner {
+          padding: 3rem 2.2rem 2.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="notice-head">
+      <p class="notice-head__badge">BLUE ARCHIVE 汉化版</p>
+      <h1 class="notice-head__title">联网功能已剥离</h1>
+      <p class="notice-head__sub">ONLINE FEATURES REMOVED</p>
+    </header>
+
+    <main class="notice-main">
+      <div class="notice-card">
+        <p class="notice-card__lead">
+          您尝试使用的功能属于<strong>联网功能</strong>，已在本地化汉化版本中<strong>完全剥离</strong>。
+        </p>
+        <p class="notice-card__text">
+          本离线汉化版本仅对原页面的<strong>内容</strong>进行翻译与本地化，不含任何可使用的联网功能。所有原站上的注册、登录、表单、购票、地图、社交与直播等入口，均已统一引导至本告知页。
+        </p>
+        <p class="notice-card__text">
+          如需使用相关功能，请前往页面底部的「访问源网站」按钮，在 NEXON 官方网站上继续操作。
+        </p>
+
+        <div class="notice-list">
+          <p class="notice-list__title">已被剥离的联网功能包括</p>
+          <ul class="notice-list__items">
+            <li>NEXON 账号注册・登录</li>
+            <li>会员帮助・FAQ 系统</li>
+            <li>咨询表单</li>
+            <li>e+ 购票・电子票</li>
+            <li>谷歌地图</li>
+            <li>YouTube・X 社交链接</li>
+            <li>舞台直播</li>
+            <li>站内搜索</li>
+          </ul>
+        </div>
+
+        <div class="notice-actions">
+          <button type="button" class="notice-btn notice-btn--primary" id="js-goto-src">访问源网站 <span>&#8594;</span></button>
+          <button type="button" class="notice-btn notice-btn--ghost" id="js-back">返回上一页</button>
+        </div>
+
+        <div class="notice-nav">
+          <p class="notice-nav__title">继续浏览本地化汉化页面</p>
+          <div class="notice-nav__links">
+            <a href="index.html">发行商变更公告（汉化版主页）</a>
+            <a href="ba-6th-fes.html">蔚蓝档案Fes！6周年特设网站</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="l10n-footer" id="l10n-footer">
+      <div class="l10n-footer__inner">
+        <p class="l10n-footer__title">本地化汉化版本</p>
+        <p class="l10n-footer__sub">LOCALIZED VERSION BY YOMESTAR &amp; ZMXC</p>
+        <a class="l10n-footer__btn" id="js-footer-src" href="https://cmn-jp.nexon.com/transfer/bluearchive/" target="_blank" rel="noopener noreferrer">访问源网站 <span>&#8594;</span></a>
+        <p class="l10n-footer__url" id="js-footer-url">https://cmn-jp.nexon.com/transfer/bluearchive/</p>
+        <dl class="l10n-footer__meta">
+          <div class="l10n-footer__row"><dt>汉化时间</dt><dd>2026年10月25日</dd></div>
+          <div class="l10n-footer__row"><dt>内容本地化</dt><dd>YOMESTAR 悠梦星网络 &#65286; ZMXC</dd></div>
+        </dl>
+        <p class="l10n-footer__note">本页面为离线汉化版本，仅供内容查看；页面内所有联网功能均已完全剥离。作品版权归 NEXON Co., Ltd. / NEXON Games Co., Ltd. 及 Yostar 所有，本汉化版与官方无关，禁止用于商业用途。</p>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        'use strict';
+        // 读取来源页面参数（?src=原站地址），让「访问源网站」指向对应的原站页面
+        var DEFAULT_SRC = 'https://cmn-jp.nexon.com/transfer/bluearchive/';
+        var src = DEFAULT_SRC;
+        try {
+          var m = (window.location.search || '').match(/[?&]src=([^&]+)/);
+          if (m) {
+            var decoded = decodeURIComponent(m[1]);
+            // 仅允许 NEXON 官方域名的 http(s) 地址，防止跳转被滥用
+            if (/^https:\/\/cmn-jp\.nexon\.com\/[A-Za-z0-9\-_./]*$/.test(decoded)) src = decoded;
+          }
+        } catch (e) { /* 忽略 */ }
+
+        var footerBtn = document.getElementById('js-footer-src');
+        var footerUrl = document.getElementById('js-footer-url');
+        if (footerBtn) footerBtn.href = src;
+        if (footerUrl) footerUrl.textContent = src;
+
+        var back = document.getElementById('js-back');
+        if (back) {
+          back.addEventListener('click', function () {
+            if (window.history.length > 1) {
+              window.history.back();
+            } else {
+              window.location.href = 'index.html';
+            }
+          });
+        }
+        var goto = document.getElementById('js-goto-src');
+        if (goto) {
+          goto.addEventListener('click', function () {
+            window.open(src, '_blank', 'noopener');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
