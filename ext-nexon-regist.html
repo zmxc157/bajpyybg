@@ -603,6 +603,101 @@
   .ext-grid2 { grid-template-columns: 1fr; }
 }
 
+/* ====================================================================
+   NEXON 原站样式还原（regist.css / login_v2026.css 真实规则，图标取自 static.nexon.co.jp）
+==================================================================== */
+.nx-wrap{max-width:520px;margin:0 auto}
+.nx-ttl{margin:0 0 4px;text-align:center;font-size:2.6rem;font-weight:700;color:#333}
+.nx-lead{margin:0;text-align:center;font-size:1.35rem;color:#888}
+.nx-link{margin-top:1.6rem;text-align:center;font-size:1.35rem}
+.nx-link a{color:#666;text-decoration:underline}
+.nx-link a:hover{text-decoration:none}
+
+/* STEP1 账户类型按钮（原站 .account-type ul li a：460px 边框按钮 + 左侧品牌图标） */
+.nx-acctype{margin:2.4rem 0 0;padding:0;list-style:none}
+.nx-acctype li+li{margin-top:1rem}
+.nx-acctype a{position:relative;display:block;width:100%;box-sizing:border-box;text-align:center;font-size:1.4rem;font-weight:700;padding:1.35rem 0 1.3rem;border:solid 1px #d0d0d0;color:#333;text-decoration:none;background:#fff}
+.nx-acctype a::before{content:"";position:absolute;top:50%;left:1.9rem;transform:translateY(-50%);width:21px;height:21px;background:no-repeat center center/contain}
+.nx-acctype a:hover{background-color:#f6f6f6;border-color:#f6f6f6}
+.nx-acctype li.nexon a::before{background-image:url(assets/common/icons/icn_logo_nx_color.svg)}
+.nx-acctype li.google a::before{background-image:url(assets/common/icons/icn_logo_google.svg)}
+.nx-acctype li.apple a::before{background-image:url(assets/common/icons/icn_logo_apple_black.svg)}
+.nx-acctype li.line a::before{background-image:url(assets/common/icons/icn_logo_line.png)}
+.nx-acctype li.facebook a::before{background-image:url(assets/common/icons/icn_logo_fb_color.svg)}
+.nx-acctype a.is-off{cursor:default}
+.nx-acctype a.is-off::after{content:"联网功能已剥离";position:absolute;top:50%;right:1.6rem;transform:translateY(-50%);font-size:1.1rem;font-weight:400;color:#b0b6bf}
+
+/* 登录页圆形联合登录按钮（原站 70px 圆形 + 其他登录方式分隔） */
+.nx-round-wrap{position:relative;max-width:520px;margin:3.4rem auto 0}
+.nx-round-wrap::before{content:"";position:absolute;top:0;left:0;width:100%;height:1px;background-color:#e5e5e5;margin-top:7px}
+.nx-round-label{position:absolute;top:0;left:50%;transform:translateX(-50%);display:inline-block;padding:0 1.6rem;background-color:#f9f9f9;color:#888;font-size:1.3rem}
+.nx-round{position:relative;display:flex;justify-content:center;width:100%;margin:0;padding:5rem 0 0;list-style:none}
+.nx-round li{position:relative;width:64px;height:64px;margin:0 .5rem;border-radius:50%;border:solid 1px #f3f3f3;overflow:hidden;background:#fff}
+.nx-round li:hover{border-color:#ededed}
+.nx-round li a{position:absolute;top:0;left:0;display:block;width:100%;height:100%;text-indent:110%;overflow:hidden;white-space:nowrap;background-color:#fff}
+.nx-round li a:hover{background-color:#f3f3f3}
+.nx-round li a::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:no-repeat center center/contain}
+.nx-round li.facebook a::before{width:30px;height:30px;background-image:url(assets/common/icons/icn_logo_fb_color.svg)}
+.nx-round li.google a::before{width:30px;height:30px;background-image:url(assets/common/icons/icn_logo_google.svg)}
+.nx-round li.apple a::before{width:22px;height:27px;background-image:url(assets/common/icons/icn_logo_apple_black.svg)}
+.nx-round li.line a::before{width:25px;height:25px;background-image:url(assets/common/icons/icn_logo_line.svg)}
+.nx-round li.x a::before{width:30px;height:30px;background-image:url(assets/common/icons/icn_logo_x.svg)}
+
+/* 原站输入框（formlist__input：圆角 6px 边框 #D7D7D7） */
+.nx-form{max-width:460px;margin:2.4rem auto 0;color:#333}
+.nx-form__title{display:flex;align-items:center;font-size:1.35rem;font-weight:700;margin-bottom:.6rem}
+.nx-form__detail{position:relative;font-size:1.6rem}
+.nx-form__detail+.nx-form__title{margin-top:2rem}
+.nx-form__detail+.nx-form__detail{margin-top:2rem}
+.nx-form__input{box-sizing:border-box;width:100%;outline:none;border:solid 1px #d7d7d7;border-radius:6px;padding:1.4rem 1.6rem;font-size:1.6rem;background:#fff;color:#333}
+.nx-form__input::placeholder{color:#b6bcc7}
+.nx-form__input:focus{border-color:#aaa}
+.nx-form__disp{position:absolute;top:0;right:0;width:26px;height:26px;margin:1.7rem 1.5rem 0 0;overflow:hidden;cursor:pointer;background:url(assets/common/icons/icn_pass_visible.svg) no-repeat center center/contain}
+.nx-form__disp.is-off{background-image:url(assets/common/icons/icn_pass_invisible.svg)}
+.nx-form__retention{margin-top:1rem;font-size:1.35rem}
+.nx-form__safety{display:flex;align-items:center;margin-top:.8rem;font-size:1.15rem}
+.nx-form__safety .lv{display:flex;padding:1px;border:solid 1px #cacbcc;margin-left:.8rem}
+.nx-form__safety .lv span{display:block;width:8px;height:8px}
+.nx-form__safety .lv span+span{margin-left:1px}
+
+/* 协议复选框（原站 img_checkbox_*_pc.svg） */
+.nx-agree{max-width:460px;margin:2.8rem auto 0;font-size:1.35rem;color:#333}
+.nx-agree__text{text-align:center;font-size:1.35rem;color:#888;margin:0 0 .8rem}
+.nx-agree__all{padding:1.4rem 2rem;font-weight:700;background-color:#f5f6f7;margin-top:.8rem}
+.nx-agree__all label{display:block;cursor:pointer}
+.nx-agree__policy{margin:.6rem 0;padding:.8rem 2rem}
+.nx-agree__info{padding:0 2rem}
+.nx-agree label{display:flex;align-items:flex-start;cursor:pointer;line-height:1.7}
+.nx-agree input[type=checkbox]{position:absolute;opacity:0;width:0;height:0}
+.nx-agree .nx-check{flex:none;display:inline-block;width:23px;height:23px;margin-right:1.2rem;background:url(assets/common/icons/img_checkbox_default_pc.svg) no-repeat center center/contain}
+.nx-agree input[type=checkbox]:checked+.nx-check{background-image:url(assets/common/icons/img_checkbox_active_pc.svg)}
+.nx-agree__necessary{color:#0aa0d2}
+.nx-err{display:flex;align-items:flex-start;width:100%;margin:1rem auto 0;font-size:1.3rem;color:#d93025;line-height:1.6}
+
+/* 原站按钮（common-b 蓝 / common-black 黑，56px 高 + 右箭头） */
+.nx-btn{display:block;box-sizing:border-box;width:100%;max-width:460px;margin:2.4rem auto 0;position:relative;height:56px;padding:1.7rem 2rem 0;font-size:1.7rem;font-weight:700;color:#fff;text-align:center;text-decoration:none;border:0;border-radius:6px;overflow:hidden;cursor:pointer}
+.nx-btn::after{content:"";position:absolute;top:50%;right:2rem;transform:translateY(-50%);display:block;width:10px;height:16px;background:url(assets/common/icons/icn_arrow_w.svg) no-repeat center center/contain}
+.nx-btn--blue{background-color:#0aa0d2}
+.nx-btn--blue:hover{background-color:#14aae5}
+.nx-btn--black{background-color:#333}
+.nx-btn--black:hover{background-color:#0a74ff}
+.nx-btn--passkey{padding-left:5rem}
+.nx-btn--passkey::before{content:"";position:absolute;top:50%;left:2rem;transform:translateY(-50%);width:21px;height:21px;background:url(assets/common/icons/passkey_btn_icn.svg) no-repeat center center/contain}
+
+/* OTP 6 位输入框（原站 authkey__input：68px 大数字框） */
+.nx-otp{width:460px;max-width:100%;margin:2.4rem auto 0;display:flex;justify-content:space-between}
+.nx-otp span{box-sizing:border-box;width:68px;padding:.4rem 0 0;border:solid 1px #95989a;border-radius:6px;outline:none;text-align:center;font-size:4.6rem;line-height:1.2;color:#333;background:#fff}
+.nx-otp span:nth-of-type(3){margin-right:10px}
+.nx-otp-info{width:460px;max-width:100%;margin:1.6rem auto 0;font-size:1.35rem;color:#666}
+.nx-info-box{width:460px;max-width:100%;margin:2.4rem auto 0;border-radius:6px;background-color:#fff;border:solid 1px #f3f3f3}
+.nx-info-box__userid{display:flex;justify-content:center;align-items:center;padding:2.4rem 0;font-size:1.6rem}
+.nx-info-box__userid img{width:18px;margin-right:.6rem}
+.nx-info-box__userid dd{font-size:2.2rem;font-weight:700;color:#333;margin-left:.4rem}
+@media(max-width:560px){
+  .nx-otp span{width:12.6vw;font-size:9vw}
+  .nx-otp span:nth-of-type(3){margin-right:2vw}
+}
+
 
 /* ==========================================================
    本地化（汉化）专用样式 —— 由 YOMESTAR 悠梦星网络 ＆ ZMXC 添加
@@ -701,164 +796,65 @@
       <div class="ext-body">
         <section class="ext-card">
           <h2 class="ext-card__title">页面说明<small>免费会员注册</small></h2>
-          <p style="font-size:1.4rem;line-height:1.9;color:#3a3f4a;margin:0 0 1.4rem">本页为 NEXON 门户网站「<b>免费会员注册</b>」（無料会員登録）的汉化查看版，按原站注册流程的两个页面完整还原：<b>STEP1 选择账户类型</b> → <b>STEP2 创建 NEXON ID</b>。《蔚蓝档案》日服发行商变更为 NEXON 直接运营后，游戏登录与账户管理均通过 NEXON ID（NEXON 会员账户）进行。</p>
+          <p style="font-size:1.4rem;line-height:1.9;color:#3a3f4a;margin:0 0 1.4rem">本页为 NEXON 门户网站「<b>免费会员注册</b>」（無料会員登録）的汉化查看版，按原站注册流程的两个页面完整还原：<b>STEP1 选择要注册的账户类型</b> → <b>STEP2 创建 NEXON ID</b>。按钮样式、表单项目、输入规则与协议项目均按原站样式还原。《蔚蓝档案》日服发行商变更为 NEXON 直接运营后，游戏登录与账户管理均通过 NEXON ID（NEXON 会员账户）进行。</p>
           <p style="font-size:1.3rem;line-height:1.8;color:#6b7280;margin:0">原站路径：NEXON 门户网站 ＞ 登录区 ＞ NEXON会员注册 ＞ 选择账户类型 ＞ 创建 NEXON ID。注册表单为联网功能，已在本地化页面中剥离，请在原站完成注册。</p>
         </section>
 
         <section class="ext-card">
-          <h2 class="ext-card__title">STEP1 选择要注册的账户类型<small>会員登録 / 账户类型选择</small></h2>
-          <p style="font-size:1.5rem;line-height:1.9;color:#3a3f4a;margin:0 0 1.8rem">请选择要注册的账户类型。</p>
-          <ul class="ext-acctype">
-            <li class="ext-acctype__item">
-              <span class="ext-acctype__icon ext-acctype__icon--nexon">NEXON<br>ID</span>
-              <div class="ext-acctype__body">
-                <h3 class="ext-acctype__name">使用 NEXON ID 注册</h3>
-                <p class="ext-acctype__desc">创建 NEXON 会员账户（NEXON ID）后使用。无需第三方账户，推荐。</p>
-              </div>
-              <span class="ext-acctype__orig">jp.nexon.com/regist/input</span>
-            </li>
-            <li class="ext-acctype__item">
-              <span class="ext-acctype__icon ext-acctype__icon--google">
-                <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 13.9 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-2.8-.4-4.1H24v8.4h12.5c-.3 2.1-1.6 5.2-4.7 7.3l7.6 5.9c4.6-4.3 6.7-10.5 6.7-17.5z"/><path fill="#FBBC05" d="M10.4 28.1c-.5-1.5-.8-3-.8-4.6s.3-3.1.8-4.6l-7.8-6.1C1 16.3 0 20 0 23.5s1 7.2 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.4-2 15.2-5.6l-7.6-5.9c-2 1.4-4.7 2.4-7.6 2.4-6.4 0-11.7-4.4-13.6-10.4l-7.8 6.1C6.5 41.1 14.6 47.5 24 47.5z"/></svg>
-              </span>
-              <div class="ext-acctype__body">
-                <h3 class="ext-acctype__name">使用 Google 账户注册</h3>
-                <p class="ext-acctype__desc">使用 Google 账户信息进行注册（TPA 联合登录）。</p>
-              </div>
-              <span class="ext-acctype__orig">jp.nexon.com/regist/tpa?tpatype=google</span>
-            </li>
-            <li class="ext-acctype__item">
-              <span class="ext-acctype__icon ext-acctype__icon--apple">
-                <svg width="20" height="20" viewBox="0 0 384 512" aria-hidden="true"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.5-33 24.8-63.2 24-74.1-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.5 44.3-25.3 71.2 26.2 2 49.4-11.4 69.2-32z"/></svg>
-              </span>
-              <div class="ext-acctype__body">
-                <h3 class="ext-acctype__name">使用 Apple 账户注册</h3>
-                <p class="ext-acctype__desc">使用 Apple ID 进行注册（Sign in with Apple）。</p>
-              </div>
-              <span class="ext-acctype__orig">jp.nexon.com/extendlogin/callback_apple</span>
-            </li>
-            <li class="ext-acctype__item">
-              <span class="ext-acctype__icon ext-acctype__icon--line">LINE</span>
-              <div class="ext-acctype__body">
-                <h3 class="ext-acctype__name">使用 LINE 账户注册</h3>
-                <p class="ext-acctype__desc">使用 LINE 账户信息进行注册（TPA 联合登录）。</p>
-              </div>
-              <span class="ext-acctype__orig">jp.nexon.com/regist/tpa?tpatype=line</span>
-            </li>
-            <li class="ext-acctype__item">
-              <span class="ext-acctype__icon ext-acctype__icon--facebook">
-                <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
-              </span>
-              <div class="ext-acctype__body">
-                <h3 class="ext-acctype__name">使用 Facebook 账户注册</h3>
-                <p class="ext-acctype__desc">使用 Facebook 账户信息进行注册（TPA 联合登录）。</p>
-              </div>
-              <span class="ext-acctype__orig">jp.nexon.com/regist/tpa?tpatype=facebook</span>
-            </li>
-          </ul>
-          <p class="ext-ostyle__note">※ 选择账户类型的按钮为原站联网功能，已在本地化页面中剥离。请通过页面底部的「访问源网站」链接前往原站注册。</p>
-          <div class="ext-ostyle__btnrow">
-            <button type="button" class="ext-btn ext-btn--black" data-l10n-modal>使用 NEXON ID 注册（联网功能已剥离）</button>
-            <a class="ext-btn ext-btn--ghost" href="ext-nexon-login.html">已是 NEXON 会员的用户请由此登录（汉化） &#8594;</a>
+          <h2 class="ext-card__title">STEP1 选择要注册的账户类型<small>会員登録</small></h2>
+          <div class="nx-wrap">
+            <h3 class="nx-ttl">会員登録</h3>
+            <p class="nx-lead">请选择要注册的账户类型。（登録するアカウントの種類を選択してください。）</p>
+            <ul class="nx-acctype">
+              <li class="nexon"><a href="javascript:void(0)" class="is-off" data-l10n-modal>使用 NEXON ID 注册（NEXON IDで登録）</a></li>
+              <li class="google"><a href="javascript:void(0)" class="is-off" data-l10n-modal>使用 Google 账户注册（Googleアカウントで登録）</a></li>
+              <li class="apple"><a href="javascript:void(0)" class="is-off" data-l10n-modal>使用 Apple 账户注册（Appleアカウントで登録）</a></li>
+              <li class="line"><a href="javascript:void(0)" class="is-off" data-l10n-modal>使用 LINE 账户注册（LINEアカウントで登録）</a></li>
+              <li class="facebook"><a href="javascript:void(0)" class="is-off" data-l10n-modal>使用 Facebook 账户注册（Facebookアカウントで登録）</a></li>
+            </ul>
+            <p class="nx-link">已是 NEXON 会员的用户请由此登录（NEXON会員の方はこちら（ログイン））：<a href="ext-nexon-login.html">NEXON ID 登录（汉化）&#8594;</a></p>
+            <p style="font-size:1.25rem;color:#9aa0ab;line-height:1.8;margin:1.6rem 0 0;text-align:center">※ 选择账户类型的按钮为原站联网功能，已在本地化页面中剥离。原站按钮分别指向：jp.nexon.com/regist/input（NEXON ID）・jp.nexon.com/regist/tpa?tpatype=google / line / facebook・jp.nexon.com/extendlogin/callback_apple（Apple）。</p>
           </div>
         </section>
 
         <section class="ext-card">
-          <h2 class="ext-card__title">STEP2 创建 NEXON ID<small>NEXON ID作成 / 注册表单</small></h2>
-          <p style="font-size:1.35rem;line-height:1.8;color:#6b7280;margin:0 0 1.8rem">以下为原站「创建 NEXON ID」表单的完整还原（表单项目、输入规则、同意项目与按钮）。原站通过即时校验确认 NEXON ID 与密码的可用性。</p>
-          <div class="ext-ostyle">
-            <div class="ext-ostyle__row">
-              <span class="ext-ostyle__label">NEXON ID</span>
-              <div class="ext-ostyle__field">
-                <div class="ext-ostyle__input ext-ostyle__input--disabled">以半角英文字母开头的 4～20 个字符以内</div>
-                <p class="ext-ostyle__note">※ 输入时原站将即时校验；已被注册的 ID 将显示错误提示，并提供候选 ID（オルタナティブ）。</p>
+          <h2 class="ext-card__title">STEP2 创建 NEXON ID<small>NEXON ID作成</small></h2>
+          <div class="nx-wrap">
+            <h3 class="nx-ttl">NEXON ID作成</h3>
+            <p class="nx-lead">（原站注册表单还原）</p>
+            <div class="nx-form">
+              <div class="nx-form__title">NEXON ID</div>
+              <div class="nx-form__detail">
+                <input class="nx-form__input" type="text" placeholder="以半角英文字母开头的 4～20 个字符以内（半角アルファベットで始まる4～20文字以内）" disabled>
               </div>
-            </div>
-            <div class="ext-ostyle__row">
-              <span class="ext-ostyle__label">密码</span>
-              <div class="ext-ostyle__field">
-                <div class="ext-ostyle__input ext-ostyle__input--disabled">含半角英数字的 8～20 个字符以内</div>
-                <span class="ext-ostyle__toggle">显示切换</span>
-                <div class="ext-ostyle__safety">
-                  <span>密码安全性：</span>
-                  <span id="password_SaftyText">无效</span>
-                  <span class="level"><span></span><span></span><span></span><span></span></span>
+              <div class="nx-form__title">密码（パスワード）</div>
+              <div class="nx-form__detail">
+                <input class="nx-form__input" type="password" placeholder="含半角英数字的 8～20 个字符以内（半角英数字を含む8～20文字以内）" disabled>
+                <span class="nx-form__disp" aria-hidden="true"></span>
+                <div class="nx-form__safety">
+                  <span>密码安全性（パスワード安全性）：无效（無効）</span>
+                  <span class="lv" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
                 </div>
-                <p class="ext-ostyle__note">※ 安全性随输入内容实时显示（4 级显示）。</p>
+              </div>
+              <div class="nx-form__detail">
+                <input class="nx-form__input" type="password" placeholder="重新输入密码（パスワード再入力）" disabled>
+                <span class="nx-form__disp" aria-hidden="true"></span>
+                <span class="nx-err">密码不一致。（パスワードが一致しません。）</span>
               </div>
             </div>
-            <div class="ext-ostyle__row">
-              <span class="ext-ostyle__label">密码（再次输入）</span>
-              <div class="ext-ostyle__field">
-                <div class="ext-ostyle__input ext-ostyle__input--disabled">重新输入密码</div>
-                <span class="ext-ostyle__toggle">显示切换</span>
-                <span class="ext-ostyle__err">※ 两次输入不一致时显示：「密码不一致。」</span>
-              </div>
-            </div>
-          </div>
 
-          <div class="ext-ostyle__agree">
-            <p class="ext-ostyle__agree-title">请在确认以下内容后，继续进行。</p>
-            <label class="ext-ostyle__check"><input type="checkbox" checked><span>已全部确认。</span></label>
-            <label class="ext-ostyle__check"><input type="checkbox" checked><span>同意《<a href="https://jp.nexon.com/rule/agreement.aspx" target="_blank" rel="noopener noreferrer">NEXON 使用规约</a>》与《<a href="https://company.nexon.co.jp/support/privacypolicy.html" target="_blank" rel="noopener noreferrer">隐私政策</a>》（必须）</span></label>
-            <label class="ext-ostyle__check"><input type="checkbox"><span>接收 NEXON 游戏资讯与优惠邮件（任意）</span></label>
-            <p class="ext-ostyle__note">※ 未勾选必须项目时点击「下一步」，原站将显示错误提示：「请确认使用规约与隐私政策。」</p>
-          </div>
+            <div class="nx-agree">
+              <p class="nx-agree__text">请在确认以下内容后，继续进行。（次の内容を確認の上、ご進行ください。）</p>
+              <div class="nx-agree__all"><label><input type="checkbox"><span class="nx-check"></span>已全部确认。（すべて確認しました。）</label></div>
+              <div class="nx-agree__policy"><label><input type="checkbox"><span class="nx-check"></span><span>同意《<a href="https://jp.nexon.com/rule/agreement.aspx" target="_blank" rel="noopener noreferrer">NEXON利用規約</a>》与《<a href="https://company.nexon.co.jp/support/privacypolicy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>》<span class="nx-agree__necessary">（必須）</span></span></label></div>
+              <div class="nx-agree__info"><label><input type="checkbox"><span class="nx-check"></span><span>接收 NEXON 游戏资讯与优惠邮件（任意）（NEXONのゲーム情報やお得なメールを受け取る（任意））</span></label></div>
+              <span class="nx-err">利用規約とプライバシーポリシーを確認してください。</span>
+            </div>
 
-          <div class="ext-ostyle__btnrow">
-            <button type="button" class="ext-btn ext-btn--black" data-l10n-modal>下一步（联网功能已剥离）</button>
-            <button type="button" class="ext-btn ext-btn--ghost" data-l10n-modal>重新选择要注册的账户类型</button>
+            <button type="button" class="nx-btn nx-btn--blue" data-l10n-modal>下一步（次へ）</button>
+            <p class="nx-link"><a href="javascript:void(0)" data-l10n-modal>重新选择要注册的账户类型（登録するアカウント種類を選びなおす）</a></p>
+            <p style="font-size:1.25rem;color:#9aa0ab;line-height:1.8;margin:1.6rem 0 0;text-align:center">※ 在原站点击画面左上方 NEXON 标志离开时，将显示确认框：「要离开此页面吗？处理中的信息可能不会被保存。」（このページから移動しますか？処理中の情報は保存されない可能性があります。）</p>
           </div>
-          <p class="ext-ostyle__note">※ 原站在此页面点击 NEXON 标志离开时，将显示确认框：「要离开此页面吗？处理中的信息可能不会被保存。」</p>
-        </section>
-
-        <section class="ext-card">
-          <h2 class="ext-card__title">注册表单的错误提示一览<small>原站校验消息</small></h2>
-          <p style="font-size:1.4rem;line-height:1.85;color:#3a3f4a;margin:0 0 1.4rem">原站注册表单的实时校验消息（日文原文对照）：</p>
-          <ul class="ext-list">
-            <li>请输入 NEXON ID。（NEXON IDを入力してください）</li>
-            <li>NEXON ID 请输入 4 个字符以上、20 个字符以下。（NEXON IDは4文字以上、20文字以下で入力してください。）</li>
-            <li>该 ID 已被使用，无法注册。此时原站将提供候选 ID。（～は登録できません。）</li>
-            <li>密码不一致。（パスワードが一致しません。）</li>
-            <li>请确认使用规约与隐私政策。（利用規約とプライバシーポリシーを確認してください。）</li>
-            <li>发送处理发生错误时显示：发生错误，请稍后重试。（エラーが発生しました。）</li>
-          </ul>
-        </section>
-
-        <section class="ext-card">
-          <h2 class="ext-card__title">STEP3 邮箱地址认证<small>注册后的邮箱认证（官方 FAQ No：673）</small></h2>
-          <p style="font-size:1.4rem;line-height:1.85;color:#3a3f4a;margin:0 0 1.6rem">在原站完成 NEXON ID 创建后，将进入邮箱地址认证步骤（原站表单提交后转至邮箱认证页面 /regist/mail）。当邮箱地址无法输入（如显示「邮箱地址的输入格式不正确。」）时，请确认以下内容：</p>
-          <div class="ext-steps">
-            <div class="ext-step">
-              <div class="ext-step__num">1</div>
-              <div>
-                <h3 class="ext-step__title">确认输入是否有误</h3>
-                <p class="ext-step__text">请确认邮箱地址中是否含有无法使用的文字：全角文字、「，」（逗号）、空白。可粘贴到记事本等文本编辑软件中放大确认；在智能手机输入时，请确认选择输入模式或文字转换时为半角状态。</p>
-              </div>
-            </div>
-            <div class="ext-step">
-              <div class="ext-step__num">2</div>
-              <div>
-                <h3 class="ext-step__title">确认是否符合无法登记的形式</h3>
-                <p class="ext-step__text">以下形式的邮箱地址因 NEXON 方面规格无法登记至邮件认证服务，请更换其他邮箱地址：含有「...」（连续的点）的地址；「abc.@」等 @ 前紧邻点号的地址；「.abc@」等首字符为点号的地址；「-abc@」等首字符为 -（连字符）的地址。</p>
-              </div>
-            </div>
-            <div class="ext-step">
-              <div class="ext-step__num">3</div>
-              <div>
-                <h3 class="ext-step__title">确认是否使用了一次性邮箱地址</h3>
-                <p class="ext-step__text">邮箱地址请登记可持续接收的。一次性邮箱地址等使用期限受限的邮箱地址可能无法登记。请登记您签约的运营商或手机 carrier 的邮箱地址，以及 Yahoo、Google 等门户网站发行的免费邮箱地址。</p>
-              </div>
-            </div>
-            <div class="ext-step">
-              <div class="ext-step__num">4</div>
-              <div>
-                <h3 class="ext-step__title">确认是否为海外服务发行的邮箱地址</h3>
-                <p class="ext-step__text">海外门户网站等非面向日本国内提供的服务的邮箱地址可能无法登记。请登记面向日本国内提供的服务的邮箱地址。</p>
-              </div>
-            </div>
-          </div>
-          <p class="ext-ostyle__note">※ 在手机邮箱中设置了域名指定受信时，请进行设置以确保能接收来自「@nexon.co.jp」的邮件（官方 FAQ No：671）。设置方法因机型和业务内容而异，详情请咨询您所使用的手机运营商。</p>
         </section>
 
         <section class="ext-card">
@@ -889,6 +885,7 @@
             <span class="l10n-footer__sep" aria-hidden="true">|</span>
             <span class="l10n-footer__item">内容本地化 <b>YOMESTAR 悠梦星网络 &#65286; ZMXC</b></span>
           </div>
+    <p class="l10n-footer__mail">页面报错 / 更新反馈：<a href="mailto:1578929129@qq.com">1578929129@qq.com</a></p>
           <p class="l10n-footer__note">本页面为非官方离线汉化版本，本质上是一个单机页面：我们仅保证页面中的内容在汉化工作进行之时是最新的，原站的后续更新不会在此同步。作品版权归 NEXON Co., Ltd. / NEXON Games Co., Ltd. 及 Yostar 所有，本汉化版与官方无关，禁止用于商业用途。</p>
           <p class="l10n-footer__copy">&copy; NEXON Co., Ltd. 与 NEXON Games Co., Ltd. 保留所有权利</p>
         </div>
