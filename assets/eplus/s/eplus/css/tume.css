@@ -1,0 +1,38 @@
+.column__main .section:first-child {
+  margin-top:24px;
+}
+
+.column__main {
+  margin-top:-24px;
+}
+
+.column__right .nav:first-child {
+  margin-top:24px;
+}
+
+.column__right {
+  margin-top:-24px;
+}
+
+.column__left .nav:first-child {
+  margin-top:24px;
+}
+
+.column__left {
+  margin-top:-24px;
+}
+
+.section.hidden-md:first-child + .section, 
+.hidden-md.column:first-child + .section, 
+.column.s1-genres__item--genre6:first-child + .section, 
+.column.s1-genres__item--genre8:first-child + .section, 
+.section.s1-genres__item--genre6:first-child + .section, 
+.section.s1-genres__item--genre8:first-child + .section, 
+.section.hidden-md:first-child + .column, 
+.hidden-md.column:first-child + .column, 
+.column.s1-genres__item--genre6:first-child + .column, 
+.column.s1-genres__item--genre8:first-child + .column, 
+.section.s1-genres__item--genre6:first-child + .column, 
+.section.s1-genres__item--genre8:first-child + .column {
+  margin-top:24px;
+}
