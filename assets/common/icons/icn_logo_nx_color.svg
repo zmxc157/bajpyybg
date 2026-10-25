@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #158cc9;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #0d335c;
+      }
+
+      .cls-3 {
+        fill: #bdcf1d;
+      }
+    </style>
+  </defs>
+  <path id="シェイプ_2" data-name="シェイプ 2" class="cls-1" d="M-0.007,129.814v80.723l107.139-56.948Z"/>
+  <path id="シェイプ_2_のコピー" data-name="シェイプ 2 のコピー" class="cls-2" d="M107.132-.007L-0.007,56.965v72.849l107.139,23.775V-0.007Z"/>
+  <path id="シェイプ_2_のコピー_2" data-name="シェイプ 2 のコピー 2" class="cls-3" d="M107.132,153.589L-0.007,210.537,132.862,240,240,183.035Z"/>
+</svg>
